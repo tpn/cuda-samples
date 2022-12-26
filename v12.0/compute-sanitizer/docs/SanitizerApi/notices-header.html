@@ -1,0 +1,222 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="concept"></meta>
+      <meta name="DC.Title" content="Notices"></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="notices-header"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>Sanitizer Api :: Compute Sanitizer Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      --&gt;
+      
+      <script src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="https://docs.nvidia.com/compute-sanitizer/SanitizerApi/index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">Compute Sanitizer Documentation</span><form id="search" method="get" action="search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="../index.html" title="The root of the site.">Compute Sanitizer
+                  v2022.4.0</a></div>
+            <div class="category"><a href="index.html" title="Sanitizer Api">Sanitizer Api</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="modules.html#modules">1.&nbsp;Modules</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__BARRIER__API">1.1.&nbsp;Sanitizer Barrier API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__CALLBACK__API">1.2.&nbsp;Sanitizer Callback API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__MEMORY__API">1.3.&nbsp;Sanitizer Memory API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__PATCHING__API">1.4.&nbsp;Sanitizer Patching API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__RESULT__API">1.5.&nbsp;Sanitizer Result Codes</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__STREAM__API">1.6.&nbsp;Sanitizer Stream API</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="annotated.html#annotated">2.&nbsp;Data Structures</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__BatchMemopData">2.1.&nbsp;Sanitizer_BatchMemopData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__CallbackData">2.2.&nbsp;Sanitizer_CallbackData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__EventData">2.3.&nbsp;Sanitizer_EventData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphExecData">2.4.&nbsp;Sanitizer_GraphExecData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphLaunchData">2.5.&nbsp;Sanitizer_GraphLaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphNodeLaunchData">2.6.&nbsp;Sanitizer_GraphNodeLaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__LaunchData">2.7.&nbsp;Sanitizer_LaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__MemcpyData">2.8.&nbsp;Sanitizer_MemcpyData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__MemsetData">2.9.&nbsp;Sanitizer_MemsetData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceArrayData">2.10.&nbsp;Sanitizer_ResourceArrayData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceContextData">2.11.&nbsp;Sanitizer_ResourceContextData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData">2.12.&nbsp;Sanitizer_ResourceFunctionsLazyLoadedData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceMemoryData">2.13.&nbsp;Sanitizer_ResourceMemoryData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceMempoolData">2.14.&nbsp;Sanitizer_ResourceMempoolData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceModuleData">2.15.&nbsp;Sanitizer_ResourceModuleData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceStreamData">2.16.&nbsp;Sanitizer_ResourceStreamData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__SynchronizeData">2.17.&nbsp;Sanitizer_SynchronizeData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__UvmData">2.18.&nbsp;Sanitizer_UvmData</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="functions.html#functions">3.&nbsp;Data Fields</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="notices-header.html#notices-header">Notices</a></div>
+                  <ul></ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="breadcrumbs"><a href="functions.html" shape="rect">&lt; Previous</a> | Next &gt;
+               </div>
+               <div id="release-info">Sanitizer Api
+                  -
+                  
+                  v2022.4.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated July 5, 2022
+                  -
+                  <a href="mailto:devtools@nvidia.com?subject=Compute Sanitizer Documentation Feedback: Sanitizer Api">Send Feedback</a></div>
+            </div>
+            <article id="contents">
+               <div class="topic nested1" id="notices-header"><a name="notices-header" shape="rect">
+                     <!-- --></a><h2 class="topictitle2">Notices</h2>
+                  <div class="topic reference nested1" id="notice"><a name="notice" shape="rect">
+                        <!-- --></a><h3 class="topictitle3"></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Notice</h3>
+                           <p class="p">ALL NVIDIA DESIGN SPECIFICATIONS, REFERENCE BOARDS, FILES, DRAWINGS, DIAGNOSTICS, LISTS, AND OTHER DOCUMENTS (TOGETHER AND
+                              SEPARATELY, "MATERIALS") ARE BEING PROVIDED "AS IS." NVIDIA MAKES NO WARRANTIES, EXPRESSED, IMPLIED, STATUTORY, OR OTHERWISE
+                              WITH RESPECT TO THE MATERIALS, AND EXPRESSLY DISCLAIMS ALL IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTABILITY, AND FITNESS
+                              FOR A PARTICULAR PURPOSE. 
+                           </p>
+                           <p class="p">Information furnished is believed to be accurate and reliable. However, NVIDIA Corporation assumes no responsibility for the
+                              consequences of use of such information or for any infringement of patents or other rights of third parties that may result
+                              from its use. No license is granted by implication of otherwise under any patent rights of NVIDIA Corporation. Specifications
+                              mentioned in this publication are subject to change without notice. This publication supersedes and replaces all other information
+                              previously supplied. NVIDIA Corporation products are not authorized as critical components in life support devices or systems
+                              without express written approval of NVIDIA Corporation.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="trademarks"><a name="trademarks" shape="rect">
+                        <!-- --></a><h3 class="topictitle3"></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Trademarks</h3>
+                           <p class="p">NVIDIA and the NVIDIA logo are trademarks or registered trademarks of NVIDIA Corporation
+                              in the U.S. and other countries.  Other company and product names may be trademarks of
+                              the respective companies with which they are associated.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="copyright-past-to-present"><a name="copyright-past-to-present" shape="rect">
+                        <!-- --></a><h3 class="topictitle3"></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Copyright</h3>
+                           <p class="p">© <span class="ph">2019</span>-<span class="ph">2022</span> NVIDIA
+                              Corporation and affiliates. All rights reserved.
+                           </p>
+                           <p class="p">This product includes software developed by the Syncro Soft SRL (http://www.sync.ro/).</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>

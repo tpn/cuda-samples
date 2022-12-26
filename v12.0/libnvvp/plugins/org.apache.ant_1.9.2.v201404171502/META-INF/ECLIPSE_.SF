@@ -1,0 +1,179 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: y2Yi2okzJ9/FZc/M+tZ89qu/zso=
+Created-By: 1.6.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: Kcaemm0pkHCjHUp0SrODWbn/zRI=
+
+Name: lib/ant-apache-bcel.jar
+SHA1-Digest: PwQeaut/A+lbwd/0eDiMEKOsw4g=
+
+Name: about_files/SAX-LICENSE.html
+SHA1-Digest: wfcxz3PMKKjNrpG0aXSbqRs/EEk=
+
+Name: etc/mmetrics-frames.xsl
+SHA1-Digest: APiAPtADgoYGSwEquxQdQx5NN0A=
+
+Name: bin/ant.bat
+SHA1-Digest: jkybqnRDQd/rHzM3CxWkoV4f5l0=
+
+Name: etc/tagdiff.xsl
+SHA1-Digest: oQK6F+rUwsdxfJl58vbKAmtTs3Y=
+
+Name: lib/ant.jar
+SHA1-Digest: Lvg/2o84SMKJDkM3dpbFzG44Pgg=
+
+Name: lib/ant-apache-oro.jar
+SHA1-Digest: 1ZoAKJ9Fi0tGLDgeepxBc8gZczs=
+
+Name: lib/ant-jsch.jar
+SHA1-Digest: R4BjNfYEzKEcjq1YptzlN/KZpwU=
+
+Name: about_files/ASL-LICENSE-2.0.txt
+SHA1-Digest: rwxLKF3abAAfm7UMkgtQnA9n+jU=
+
+Name: etc/coverage-frames.xsl
+SHA1-Digest: Lk7Vo06ABrH7brbJkP1hKRxLkMg=
+
+Name: lib/ant-jdepend.jar
+SHA1-Digest: 2c9po+QsTFRx3pY9HuHcNB6qRCw=
+
+Name: lib/ant-junit4.jar
+SHA1-Digest: NxwNDuk/JRoP7qPCMlLSoDFt9k4=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: aM8odIt7KSTgo2Ap3NjnGa3gOAA=
+
+Name: lib/ant-apache-regexp.jar
+SHA1-Digest: MYbkO197nQcRVVegjhhV2NQu05g=
+
+Name: bin/runant.pl
+SHA1-Digest: 4EKNYCEcyO/SMqxm79fnts8/Q1c=
+
+Name: bin/envset.cmd
+SHA1-Digest: 9WFyUZ2cKuXetEvMgGM3urnSVQg=
+
+Name: etc/checkstyle/checkstyle-text.xsl
+SHA1-Digest: Jzub6NSrWxS9hYda+Wy/SP49SeI=
+
+Name: bin/ant.cmd
+SHA1-Digest: tHYUNM1obJkUDeSxiC5D6ta52vo=
+
+Name: lib/ant-junit.jar
+SHA1-Digest: vkYYRfp8vL1VIGh7L8sHV5cDpRk=
+
+Name: etc/log.xsl
+SHA1-Digest: 0HD61tw+M8q33hpPVPkjJJe4SDo=
+
+Name: bin/antRun
+SHA1-Digest: 3xz5zLVIT2QJnPskzZCOuX0LVnw=
+
+Name: about_files/DOM-LICENSE.html
+SHA1-Digest: SjQGRnT57q7bMbrYLDqao3XYtr8=
+
+Name: lib/ant-testutil.jar
+SHA1-Digest: PV3ca/AnBbuODjWrpgBkJYjrQVA=
+
+Name: bin/runant.py
+SHA1-Digest: L211F958daH2/IV7BFxPKBmgJTw=
+
+Name: lib/ant-commons-logging.jar
+SHA1-Digest: fDZQHdW3R/zvt8K4I1VDydhi4fw=
+
+Name: lib/ant-swing.jar
+SHA1-Digest: CU2VpG2wmeTYfwoFw4zvn2fX4FU=
+
+Name: etc/jdepend-frames.xsl
+SHA1-Digest: OEsPHq3PIr185ocUtm81ULkmobs=
+
+Name: etc/changelog.xsl
+SHA1-Digest: 9ZFS8fHSvz42GLs2NDnqzLFo5G8=
+
+Name: etc/checkstyle/checkstyle-xdoc.xsl
+SHA1-Digest: mfVMgdE+9JoC0hKc0Vc5f7pbe/c=
+
+Name: lib/ant-launcher.jar
+SHA1-Digest: RujRiSYg5NwWYh5Fr+YLReAAFFk=
+
+Name: etc/jdepend.xsl
+SHA1-Digest: M6boZHWa9+JeDhCjXtq5Z9Y61dY=
+
+Name: lib/ant-apache-xalan2.jar
+SHA1-Digest: HZcakm4zUMPu6VYivPLiM8Hc/3w=
+
+Name: lib/ant-jmf.jar
+SHA1-Digest: o1cbbezf3iN+4CEjbpgwitbL8dY=
+
+Name: bin/runrc.cmd
+SHA1-Digest: 0mf1aP5RrYcxoP5Pjr+BMLu6hyY=
+
+Name: lib/ant-netrexx.jar
+SHA1-Digest: LSNVa5TazrvgWBIgaa9V+t855sw=
+
+Name: plugin.properties
+SHA1-Digest: VUkv9b6jFcYlTCyaRKHYkKfXFkg=
+
+Name: lib/ant-jai.jar
+SHA1-Digest: 9ySXMvAVvupvJLHLuKfBuQHa2X0=
+
+Name: bin/antRun.bat
+SHA1-Digest: rv+A0p1IdhTFgOUFTuGLvUW+eBs=
+
+Name: lib/ant-apache-bsf.jar
+SHA1-Digest: XdOLbj7o0WK70wBEjvEMaZ7jJJs=
+
+Name: about_files/LICENSE
+SHA1-Digest: WURQbjdp+UeDnBBRMfdLZPsudhw=
+
+Name: lib/ant-apache-log4j.jar
+SHA1-Digest: VU8KZ/L200Y8gIFwpXS2e0gFWWE=
+
+Name: bin/ant
+SHA1-Digest: J1cTkV3qO/8wbwscWW7029cl2bg=
+
+Name: etc/checkstyle/checkstyle-frames.xsl
+SHA1-Digest: BR6YJqbc4b5CR35rlSLiJbeaqrM=
+
+Name: bin/complete-ant-cmd.pl
+SHA1-Digest: 1vaPs756w0MiEKy9WdVoazKgGoo=
+
+Name: about_files/NOTICE
+SHA1-Digest: 8cverkgImtykskYNUqNovn7DpvU=
+
+Name: lib/ant-apache-resolver.jar
+SHA1-Digest: JkoK8/DpE8pqRhgRdPwLH2JsSfE=
+
+Name: etc/junit-frames.xsl
+SHA1-Digest: +oTKexWv3SUBFxtVvkFG29bqNgw=
+
+Name: etc/junit-noframes.xsl
+SHA1-Digest: ZDFYUilnznyxvPEsWZkH0pdWQEY=
+
+Name: lib/ant-antlr.jar
+SHA1-Digest: khd5X42Gu8DSevT7BmmNMbYtlIQ=
+
+Name: about.html
+SHA1-Digest: 5jCsvGbfqmX+WtpiVyt77IPa8e4=
+
+Name: etc/maudit-frames.xsl
+SHA1-Digest: U8xxI3AoPSoVepSv0ZbfrARsTZY=
+
+Name: etc/junit-frames-xalan1.xsl
+SHA1-Digest: 1sswBvutqJ5hdBZCoON+3tDi6ZQ=
+
+Name: lib/ant-commons-net.jar
+SHA1-Digest: V7jgeZiO/+hukOTdsJKP+8ZgNB0=
+
+Name: lib/ant-javamail.jar
+SHA1-Digest: DDst474ky/VDA6PFfhw1J1bkTfc=
+
+Name: bin/lcp.bat
+SHA1-Digest: b+8g+AnDEAwTSZxS3NEYJYotwGA=
+
+Name: bin/antenv.cmd
+SHA1-Digest: keOQbPcU98FCaqUIYognjAaGToM=
+
+Name: etc/ant-bootstrap.jar
+SHA1-Digest: u1jXoTyq2NmJxENiW9AuDLcFEZE=
+
+Name: bin/antRun.pl
+SHA1-Digest: Cw3hkFZ/7NbP7kPUGL/WM1n8EKk=
+

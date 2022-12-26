@@ -1,0 +1,1714 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="reference"></meta>
+      <meta name="DC.Title" content="Data Structures"></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="annotated"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>Sanitizer Api :: Compute Sanitizer Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      --&gt;
+      
+      <script src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="https://docs.nvidia.com/compute-sanitizer/SanitizerApi/index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">Compute Sanitizer Documentation</span><form id="search" method="get" action="search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="../index.html" title="The root of the site.">Compute Sanitizer
+                  v2022.4.0</a></div>
+            <div class="category"><a href="index.html" title="Sanitizer Api">Sanitizer Api</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="modules.html#modules">1.&nbsp;Modules</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__BARRIER__API">1.1.&nbsp;Sanitizer Barrier API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__CALLBACK__API">1.2.&nbsp;Sanitizer Callback API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__MEMORY__API">1.3.&nbsp;Sanitizer Memory API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__PATCHING__API">1.4.&nbsp;Sanitizer Patching API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__RESULT__API">1.5.&nbsp;Sanitizer Result Codes</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__STREAM__API">1.6.&nbsp;Sanitizer Stream API</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="annotated.html#annotated">2.&nbsp;Data Structures</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__BatchMemopData">2.1.&nbsp;Sanitizer_BatchMemopData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__CallbackData">2.2.&nbsp;Sanitizer_CallbackData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__EventData">2.3.&nbsp;Sanitizer_EventData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphExecData">2.4.&nbsp;Sanitizer_GraphExecData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphLaunchData">2.5.&nbsp;Sanitizer_GraphLaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphNodeLaunchData">2.6.&nbsp;Sanitizer_GraphNodeLaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__LaunchData">2.7.&nbsp;Sanitizer_LaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__MemcpyData">2.8.&nbsp;Sanitizer_MemcpyData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__MemsetData">2.9.&nbsp;Sanitizer_MemsetData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceArrayData">2.10.&nbsp;Sanitizer_ResourceArrayData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceContextData">2.11.&nbsp;Sanitizer_ResourceContextData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData">2.12.&nbsp;Sanitizer_ResourceFunctionsLazyLoadedData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceMemoryData">2.13.&nbsp;Sanitizer_ResourceMemoryData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceMempoolData">2.14.&nbsp;Sanitizer_ResourceMempoolData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceModuleData">2.15.&nbsp;Sanitizer_ResourceModuleData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceStreamData">2.16.&nbsp;Sanitizer_ResourceStreamData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__SynchronizeData">2.17.&nbsp;Sanitizer_SynchronizeData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__UvmData">2.18.&nbsp;Sanitizer_UvmData</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="functions.html#functions">3.&nbsp;Data Fields</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="notices-header.html#notices-header">Notices</a></div>
+                  <ul></ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="breadcrumbs"><a href="modules.html" shape="rect">&lt; Previous</a> | <a href="functions.html" shape="rect">Next &gt;</a></div>
+               <div id="release-info">Sanitizer Api
+                  -
+                  
+                  v2022.4.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated July 5, 2022
+                  -
+                  <a href="mailto:devtools@nvidia.com?subject=Compute Sanitizer Documentation Feedback: Sanitizer Api">Send Feedback</a></div>
+            </div>
+            <article id="contents">
+               <div class="topic nested1" id="annotated"><a name="annotated" shape="rect">
+                     <!-- --></a><h2 class="topictitle2">2.&nbsp;Data Structures</h2>
+                  <div class="body refbody">
+                     <div class="section">
+                        <p class="p">Here are the data structures with brief descriptions:</p>
+                        <dl class="dl table-display">
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function." shape="rect">Sanitizer_BatchMemopData</a></dt>
+                           <dd class="dd">Data passed into a batch memop
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function." shape="rect">Sanitizer_CallbackData</a></dt>
+                           <dd class="dd">Data passed into a runtime or
+                              driver API callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__EventData" title="Data passed into an event callback function." shape="rect">Sanitizer_EventData</a></dt>
+                           <dd class="dd">Data passed into an event callback
+                              function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__GraphExecData" title="Data passed into a graphexec creation callback function." shape="rect">Sanitizer_GraphExecData</a></dt>
+                           <dd class="dd">Data passed into a graphexec
+                              creation callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__GraphLaunchData" title="Data passed into a graph launch callback function." shape="rect">Sanitizer_GraphLaunchData</a></dt>
+                           <dd class="dd">Data passed into a graph launch
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function." shape="rect">Sanitizer_GraphNodeLaunchData</a></dt>
+                           <dd class="dd">Data passed into a graph node
+                              launch callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html" shape="rect">Sanitizer_LaunchData</a></dt>
+                           <dd class="dd">Data passed into a launch callback
+                              function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function." shape="rect">Sanitizer_MemcpyData</a></dt>
+                           <dd class="dd">Data passed into a memcpy callback
+                              function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function." shape="rect">Sanitizer_MemsetData</a></dt>
+                           <dd class="dd">Data passed into a memset callback
+                              function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__ResourceArrayData" title="Data passed into a CUDA array callback function." shape="rect">Sanitizer_ResourceArrayData</a></dt>
+                           <dd class="dd">Data passed into a CUDA array
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__ResourceContextData" title="Data passed into a context resource callback function." shape="rect">Sanitizer_ResourceContextData</a></dt>
+                           <dd class="dd">Data passed into a context
+                              resource callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData" title="Data passed into a CUDA function callback function." shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a></dt>
+                           <dd class="dd">Data passed into a CUDA function
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function." shape="rect">Sanitizer_ResourceMemoryData</a></dt>
+                           <dd class="dd">Data passed into a memory resource
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__ResourceMempoolData" title="Data passed into a mempool resource callback function." shape="rect">Sanitizer_ResourceMempoolData</a></dt>
+                           <dd class="dd">Data passed into a mempool
+                              resource callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__ResourceModuleData" title="Data passed into a module resource callback function." shape="rect">Sanitizer_ResourceModuleData</a></dt>
+                           <dd class="dd">Data passed into a module resource
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__ResourceStreamData" title="Data passed into a stream resource callback function." shape="rect">Sanitizer_ResourceStreamData</a></dt>
+                           <dd class="dd">Data passed into a stream resource
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__SynchronizeData" title="Data passed into a synchronization callback function." shape="rect">Sanitizer_SynchronizeData</a></dt>
+                           <dd class="dd">Data passed into a synchronization
+                              callback function
+                           </dd>
+                           <dt class="dt dlterm"><a class="xref" href="annotated.html#structSanitizer__UvmData" title="Data passed into a managed memory callback function." shape="rect">Sanitizer_UvmData</a></dt>
+                           <dd class="dd">Data passed into a managed memory
+                              callback function
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__BatchMemopData"><a name="structSanitizer__BatchMemopData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.1.&nbsp;Sanitizer_BatchMemopData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a batch memop callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_BATCH_MEMOP. The callback data is only valid within the invocation of the callback function
+                           that is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gb535f9480452944a891c80ba054268ba" shape="rect">address</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__BatchMemopData_141b04f827e9412c9e3797f4ea902a50f" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g3ef9cb88408697511f56effdfeed5da8" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gd0b50ad0f897b982a76d9542253fec93" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type"><a href="modules.html#group__SANITIZER__CALLBACK__API_1gab53af117ae98aa6acf0a6b4dfb71cfa" title="Specifies the type of batch memory operation. " shape="rect">Sanitizer_BatchMemopType</a>&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g874b875cc64512766ed6d8f43fea3afd" shape="rect">type</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g61c24785086fa41e344d54faa076b6d0" shape="rect">value</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gb535f9480452944a891c80ba054268ba" id="group__SANITIZER__CALLBACK__API_1gb535f9480452944a891c80ba054268ba" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function. " shape="rect">Sanitizer_BatchMemopData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gb535f9480452944a891c80ba054268ba" shape="rect">address</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The address to be written. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__BatchMemopData_141b04f827e9412c9e3797f4ea902a50f" id="structSanitizer__BatchMemopData_141b04f827e9412c9e3797f4ea902a50f" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function. " shape="rect">Sanitizer_BatchMemopData</a>::<a href="annotated.html#structSanitizer__BatchMemopData_141b04f827e9412c9e3797f4ea902a50f" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context where the allocation is located </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g3ef9cb88408697511f56effdfeed5da8" id="group__SANITIZER__CALLBACK__API_1g3ef9cb88408697511f56effdfeed5da8" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function. " shape="rect">Sanitizer_BatchMemopData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g3ef9cb88408697511f56effdfeed5da8" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gd0b50ad0f897b982a76d9542253fec93" id="group__SANITIZER__CALLBACK__API_1gd0b50ad0f897b982a76d9542253fec93" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function. " shape="rect">Sanitizer_BatchMemopData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gd0b50ad0f897b982a76d9542253fec93" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream where the batch memop is executed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g874b875cc64512766ed6d8f43fea3afd" id="group__SANITIZER__CALLBACK__API_1g874b875cc64512766ed6d8f43fea3afd" shape="rect">
+                                 <!-- --></a><span><a href="modules.html#group__SANITIZER__CALLBACK__API_1gab53af117ae98aa6acf0a6b4dfb71cfa" title="Specifies the type of batch memory operation. " shape="rect">Sanitizer_BatchMemopType</a><a href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function. " shape="rect">Sanitizer_BatchMemopData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g874b875cc64512766ed6d8f43fea3afd" shape="rect">type</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Type of batch memory operation. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g61c24785086fa41e344d54faa076b6d0" id="group__SANITIZER__CALLBACK__API_1g61c24785086fa41e344d54faa076b6d0" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function. " shape="rect">Sanitizer_BatchMemopData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g61c24785086fa41e344d54faa076b6d0" shape="rect">value</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The value to be written. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__CallbackData"><a name="structSanitizer__CallbackData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.2.&nbsp;Sanitizer_CallbackData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a runtime or driver API callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_DRIVER_API or SANITIZER_CB_DOMAIN_RUNTIME_API. The callback data is valid only within the invocation
+                           of the callback function that is passed the data. If you need to retain some data for use outside of the callback, you must
+                           make of a copy of that data. For example, if you make a shallow copy of <a class="xref" href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function." shape="rect">Sanitizer_CallbackData</a> within a callback, you cannot dereference <tt class="ph tt code">functionParams</tt> outside of that callback to access the function parameters. <tt class="ph tt code">functionName</tt> is an exception: the string pointed to by <tt class="ph tt code">functionName</tt> is a global constant and so may be accessed outside of the callback. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_long_type"><a href="modules.html#group__SANITIZER__CALLBACK__API_1g0bc24cc0af4c2b8f9c50355c1c1d36ae" title="Specifies the point in an API call that a callback is issued. " shape="rect">Sanitizer_ApiCallbackSite</a>&nbsp;</span><span class="member_name_long_type"><a href="#structSanitizer__CallbackData_1f1fbd9c50f2714f75ec1de051151124d" shape="rect">callbackSite</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g6952454cc861e5a97c40d9e459a90351" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">const 
+                              char 
+                              *&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gcffbfadfe4c7af894d8e39407595efd2" shape="rect">functionName</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">const 
+                              void 
+                              *&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g3866442ee35daa08d5bbd2eeb366f91f" shape="rect">functionParams</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">const 
+                              void 
+                              *&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gb523a3af8e202cbbdd706277014041fa" shape="rect">functionReturnValue</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">const 
+                              char 
+                              *&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g1ee030118e093f440f953d896ee80be6" shape="rect">symbolName</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__CallbackData_1f1fbd9c50f2714f75ec1de051151124d" id="structSanitizer__CallbackData_1f1fbd9c50f2714f75ec1de051151124d" shape="rect">
+                                 <!-- --></a><span><a href="modules.html#group__SANITIZER__CALLBACK__API_1g0bc24cc0af4c2b8f9c50355c1c1d36ae" title="Specifies the point in an API call that a callback is issued. " shape="rect">Sanitizer_ApiCallbackSite</a><a href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function. " shape="rect">Sanitizer_CallbackData</a>::<a href="annotated.html#structSanitizer__CallbackData_1f1fbd9c50f2714f75ec1de051151124d" shape="rect">callbackSite</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Point in the runtime or driver function from where the callback was issued. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g6952454cc861e5a97c40d9e459a90351" id="group__SANITIZER__CALLBACK__API_1g6952454cc861e5a97c40d9e459a90351" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function. " shape="rect">Sanitizer_CallbackData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g6952454cc861e5a97c40d9e459a90351" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Driver context current to the thread, or null if no context is current. This value can change from the entry to exit callback
+                                    of a runtime API function if the runtime initialized a context. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gcffbfadfe4c7af894d8e39407595efd2" id="group__SANITIZER__CALLBACK__API_1gcffbfadfe4c7af894d8e39407595efd2" shape="rect">
+                                 <!-- --></a><span>const 
+                                 
+                                 char 
+                                 * <a href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function. " shape="rect">Sanitizer_CallbackData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gcffbfadfe4c7af894d8e39407595efd2" shape="rect">functionName</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Name of the runtime or driver API function which issued the callback. This string is a global constant and so may be accessed
+                                    outside of the callback. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g3866442ee35daa08d5bbd2eeb366f91f" id="group__SANITIZER__CALLBACK__API_1g3866442ee35daa08d5bbd2eeb366f91f" shape="rect">
+                                 <!-- --></a><span>const 
+                                 
+                                 void 
+                                 * <a href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function. " shape="rect">Sanitizer_CallbackData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g3866442ee35daa08d5bbd2eeb366f91f" shape="rect">functionParams</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Pointer to the arguments passed to the runtime or driver API call. See generated_cuda_runtime_api_meta.h and generated_cuda_meta.h
+                                    for structure definitions for the parameters for each runtime and driver API function. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gb523a3af8e202cbbdd706277014041fa" id="group__SANITIZER__CALLBACK__API_1gb523a3af8e202cbbdd706277014041fa" shape="rect">
+                                 <!-- --></a><span>const 
+                                 
+                                 void 
+                                 * <a href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function. " shape="rect">Sanitizer_CallbackData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gb523a3af8e202cbbdd706277014041fa" shape="rect">functionReturnValue</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Pointer to the return value of the runtime or driver API call. This field is only valid within the SANITIZER_API_EXIT callback.
+                                    For a runtime API <tt class="ph tt code">functionReturnValue</tt> points to a <tt class="ph tt code">cudaError_t</tt>. For a driver API <tt class="ph tt code">functionReturnValue</tt> points to a <tt class="ph tt code">CUresult</tt>. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g1ee030118e093f440f953d896ee80be6" id="group__SANITIZER__CALLBACK__API_1g1ee030118e093f440f953d896ee80be6" shape="rect">
+                                 <!-- --></a><span>const 
+                                 
+                                 char 
+                                 * <a href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function. " shape="rect">Sanitizer_CallbackData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g1ee030118e093f440f953d896ee80be6" shape="rect">symbolName</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Name of the symbol operated on by the runtime or driver API function which issued the callback. This entry is valid only
+                                    for driver and runtime launch callbacks, where it returns the name of the kernel. 
+                                 </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__EventData"><a name="structSanitizer__EventData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.3.&nbsp;Sanitizer_EventData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into an event callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal tp SANITIZER_CB_DOMAIN_EVENTS. The callback data is only valid within the invocation of the callback function that
+                           is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g6da08037d5ae573a39e4f54183a6db35" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUevent &nbsp;</span><span class="member_name"><a href="#structSanitizer__EventData_1480f9d5de7293e58e9d8bc24e873c843" shape="rect">event</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g2f6747e6a89033d27f91d7b72e5599be" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g96c543b1fdcbd06824271501fc8d1b89" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g6da08037d5ae573a39e4f54183a6db35" id="group__SANITIZER__CALLBACK__API_1g6da08037d5ae573a39e4f54183a6db35" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__EventData" title="Data passed into an event callback function. " shape="rect">Sanitizer_EventData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g6da08037d5ae573a39e4f54183a6db35" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> For SANITIZER_CBID_EVENTS_CREATED, SANITIZER_CBID_EVENTS_DESTROYED, and SANITIZER_CBID_EVENTS_SYNCHNONIZED, this is the context
+                                    containing the event. For SANITIZER_CBID_EVENTS_RECORD and SANITIZER_CBID_EVENTS_STREAM_WAIT, this is the context containing
+                                    the stream being recorded or waiting. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__EventData_1480f9d5de7293e58e9d8bc24e873c843" id="structSanitizer__EventData_1480f9d5de7293e58e9d8bc24e873c843" shape="rect">
+                                 <!-- --></a><span>CUevent  <a href="annotated.html#structSanitizer__EventData" title="Data passed into an event callback function. " shape="rect">Sanitizer_EventData</a>::<a href="annotated.html#structSanitizer__EventData_1480f9d5de7293e58e9d8bc24e873c843" shape="rect">event</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The event recording or being waited. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g2f6747e6a89033d27f91d7b72e5599be" id="group__SANITIZER__CALLBACK__API_1g2f6747e6a89033d27f91d7b72e5599be" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__EventData" title="Data passed into an event callback function. " shape="rect">Sanitizer_EventData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g2f6747e6a89033d27f91d7b72e5599be" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g96c543b1fdcbd06824271501fc8d1b89" id="group__SANITIZER__CALLBACK__API_1g96c543b1fdcbd06824271501fc8d1b89" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__EventData" title="Data passed into an event callback function. " shape="rect">Sanitizer_EventData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g96c543b1fdcbd06824271501fc8d1b89" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream being recorded or waiting. Available if cbid is SANITIZER_CBID_EVENTS_RECORD or SANITIZER_CBID_EVENTS_STREAM_WAIT.
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__GraphExecData"><a name="structSanitizer__GraphExecData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.4.&nbsp;Sanitizer_GraphExecData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a graphs callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_GRAPHS and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_GRAPHS_GRAPHEXEC_CREATING. The callback data is only valid within the invocation of the callback
+                           function that is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of
+                           it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUgraph &nbsp;</span><span class="member_name"><a href="#structSanitizer__GraphExecData_15fc1332373ddf7f9ded06f8bd2a8bfa8" shape="rect">graph</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUgraphExec &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gb1a817799b020868a692b5b2d82be2a9" shape="rect">graphExec</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gc77f7a54e4953682dcb29ff7bf794914" shape="rect">isDeviceLaunch</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__GraphExecData_15fc1332373ddf7f9ded06f8bd2a8bfa8" id="structSanitizer__GraphExecData_15fc1332373ddf7f9ded06f8bd2a8bfa8" shape="rect">
+                                 <!-- --></a><span>CUgraph  <a href="annotated.html#structSanitizer__GraphExecData" title="Data passed into a graphexec creation callback function. " shape="rect">Sanitizer_GraphExecData</a>::<a href="annotated.html#structSanitizer__GraphExecData_15fc1332373ddf7f9ded06f8bd2a8bfa8" shape="rect">graph</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> CUDA graph being instantiated. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gb1a817799b020868a692b5b2d82be2a9" id="group__SANITIZER__CALLBACK__API_1gb1a817799b020868a692b5b2d82be2a9" shape="rect">
+                                 <!-- --></a><span>CUgraphExec  <a href="annotated.html#structSanitizer__GraphExecData" title="Data passed into a graphexec creation callback function. " shape="rect">Sanitizer_GraphExecData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gb1a817799b020868a692b5b2d82be2a9" shape="rect">graphExec</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Instance of the CUDA graph. Can be NULL for device graph launches in the SANITIZER_CBID_GRAPHS_GRAPHEXEC_CREATING callback.
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gc77f7a54e4953682dcb29ff7bf794914" id="group__SANITIZER__CALLBACK__API_1gc77f7a54e4953682dcb29ff7bf794914" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__GraphExecData" title="Data passed into a graphexec creation callback function. " shape="rect">Sanitizer_GraphExecData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gc77f7a54e4953682dcb29ff7bf794914" shape="rect">isDeviceLaunch</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Boolean value indicating if the graphexec is for a device graph launch </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__GraphLaunchData"><a name="structSanitizer__GraphLaunchData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.5.&nbsp;Sanitizer_GraphLaunchData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a graphs callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_GRAPHS and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_GRAPHS_LAUNCH_BEGIN or SANITIZER_CBID_GRAPHS_LAUNCH_END. The callback data is only valid within the
+                           invocation of the callback function that is passed the data. If you need to retain some data for use outside of the callback,
+                           you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__GraphLaunchData_108f23b8640526f12957833e86638a942" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUgraphExec &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g6c69e3440ef748c6c5338505f6bb521e" shape="rect">graphExec</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g27bdfc7058401c7a88e7bf538752c5ab" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g43ba40476321bc1b026eab8e3ef364d1" shape="rect">isGraphUpload</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g4e19a42decf1a32b5582e4ba19346209" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__GraphLaunchData_108f23b8640526f12957833e86638a942" id="structSanitizer__GraphLaunchData_108f23b8640526f12957833e86638a942" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__GraphLaunchData" title="Data passed into a graph launch callback function. " shape="rect">Sanitizer_GraphLaunchData</a>::<a href="annotated.html#structSanitizer__GraphLaunchData_108f23b8640526f12957833e86638a942" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context where the graph is launched. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g6c69e3440ef748c6c5338505f6bb521e" id="group__SANITIZER__CALLBACK__API_1g6c69e3440ef748c6c5338505f6bb521e" shape="rect">
+                                 <!-- --></a><span>CUgraphExec  <a href="annotated.html#structSanitizer__GraphLaunchData" title="Data passed into a graph launch callback function. " shape="rect">Sanitizer_GraphLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g6c69e3440ef748c6c5338505f6bb521e" shape="rect">graphExec</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Instance of the CUDA graph being launched. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g27bdfc7058401c7a88e7bf538752c5ab" id="group__SANITIZER__CALLBACK__API_1g27bdfc7058401c7a88e7bf538752c5ab" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__GraphLaunchData" title="Data passed into a graph launch callback function. " shape="rect">Sanitizer_GraphLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g27bdfc7058401c7a88e7bf538752c5ab" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g43ba40476321bc1b026eab8e3ef364d1" id="group__SANITIZER__CALLBACK__API_1g43ba40476321bc1b026eab8e3ef364d1" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__GraphLaunchData" title="Data passed into a graph launch callback function. " shape="rect">Sanitizer_GraphLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g43ba40476321bc1b026eab8e3ef364d1" shape="rect">isGraphUpload</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Boolean value indicating if the launch callback is part of a graph upload. This field is only valid if the driver version
+                                    is 510 or newer. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g4e19a42decf1a32b5582e4ba19346209" id="group__SANITIZER__CALLBACK__API_1g4e19a42decf1a32b5582e4ba19346209" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__GraphLaunchData" title="Data passed into a graph launch callback function. " shape="rect">Sanitizer_GraphLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g4e19a42decf1a32b5582e4ba19346209" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream where the graph is launched. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__GraphNodeLaunchData"><a name="structSanitizer__GraphNodeLaunchData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.6.&nbsp;Sanitizer_GraphNodeLaunchData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a graphs callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_GRAPHS and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_GRAPHS_LAUNCH_NODE_BEGIN or SANITIZER_CBID_GRAPHS_LAUNCH_NODE_END. The callback data is only valid
+                           within the invocation of the callback function that is passed the data. If you need to retain some data for use outside of
+                           the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUgraphExec &nbsp;</span><span class="member_name"><a href="#structSanitizer__GraphNodeLaunchData_1b00ea3b5300dd8133a8eb887e0cb11ea" shape="rect">graphExec</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g72f04317e3ea0b0ba1e62d54c06606ad" shape="rect">isGraphUpload</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_long_type">struct <a href="annotated.html#structSanitizer__LaunchData" title="Data passed into a launch callback function. " shape="rect">Sanitizer_LaunchData</a>&nbsp;</span><span class="member_name_long_type"><a href="#structSanitizer__GraphNodeLaunchData_1b72a6cc5de9dbd55624130fb65b66f7b" shape="rect">launchData</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gdf81e4d9627fd5f003f01075878e2a89" shape="rect">launchId</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_long_type">struct <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>&nbsp;</span><span class="member_name_long_type"><a href="#group__SANITIZER__CALLBACK__API_1ge334046a272b7c07489c0d80fab9f8b6" shape="rect">memAllocData</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gda8d9c0a133719825143b35a3e544eea" shape="rect">memFreeAddress</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_long_type">struct <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>&nbsp;</span><span class="member_name_long_type"><a href="#group__SANITIZER__CALLBACK__API_1gf2b961a7eae0b73c12f7ec099d4726f6" shape="rect">memcpyData</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_long_type">struct <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>&nbsp;</span><span class="member_name_long_type"><a href="#group__SANITIZER__CALLBACK__API_1ga931adc0a0129a4490a2c6bb786b8d0f" shape="rect">memsetData</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUgraphNode &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g86c2a7422b28ed2929f072e3d546b9c3" shape="rect">node</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUgraphNodeType &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1ge6c93bc5c7a5dc8a5d6ec72a42f87526" shape="rect">nodeType</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__GraphNodeLaunchData_1b00ea3b5300dd8133a8eb887e0cb11ea" id="structSanitizer__GraphNodeLaunchData_1b00ea3b5300dd8133a8eb887e0cb11ea" shape="rect">
+                                 <!-- --></a><span>CUgraphExec  <a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#structSanitizer__GraphNodeLaunchData_1b00ea3b5300dd8133a8eb887e0cb11ea" shape="rect">graphExec</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Instance of the CUDA graph being launched. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g72f04317e3ea0b0ba1e62d54c06606ad" id="group__SANITIZER__CALLBACK__API_1g72f04317e3ea0b0ba1e62d54c06606ad" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g72f04317e3ea0b0ba1e62d54c06606ad" shape="rect">isGraphUpload</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Boolean value indicating if the node launch callback is part of a graph upload. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__GraphNodeLaunchData_1b72a6cc5de9dbd55624130fb65b66f7b" id="structSanitizer__GraphNodeLaunchData_1b72a6cc5de9dbd55624130fb65b66f7b" shape="rect">
+                                 <!-- --></a><span>struct <a href="annotated.html#structSanitizer__LaunchData" title="Data passed into a launch callback function. " shape="rect">Sanitizer_LaunchData</a><a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#structSanitizer__GraphNodeLaunchData_1b72a6cc5de9dbd55624130fb65b66f7b" shape="rect">launchData</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> This is only valid if nodeType is CU_GRAPH_NODE_TYPE_KERNEL. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gdf81e4d9627fd5f003f01075878e2a89" id="group__SANITIZER__CALLBACK__API_1gdf81e4d9627fd5f003f01075878e2a89" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gdf81e4d9627fd5f003f01075878e2a89" shape="rect">launchId</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch ID for this CUDA graph instance </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1ge334046a272b7c07489c0d80fab9f8b6" id="group__SANITIZER__CALLBACK__API_1ge334046a272b7c07489c0d80fab9f8b6" shape="rect">
+                                 <!-- --></a><span>struct <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a><a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1ge334046a272b7c07489c0d80fab9f8b6" shape="rect">memAllocData</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> This is only valid if nodeType is CU_GRAPH_NODE_TYPE_MEM_ALLOC. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gda8d9c0a133719825143b35a3e544eea" id="group__SANITIZER__CALLBACK__API_1gda8d9c0a133719825143b35a3e544eea" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gda8d9c0a133719825143b35a3e544eea" shape="rect">memFreeAddress</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The freed device pointer This is only valid if nodeType is CU_GRAPH_NODE_TYPE_MEM_FREE. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gf2b961a7eae0b73c12f7ec099d4726f6" id="group__SANITIZER__CALLBACK__API_1gf2b961a7eae0b73c12f7ec099d4726f6" shape="rect">
+                                 <!-- --></a><span>struct <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a><a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gf2b961a7eae0b73c12f7ec099d4726f6" shape="rect">memcpyData</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> This is only valid if nodeType is CU_GRAPH_NODE_TYPE_MEMCPY. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1ga931adc0a0129a4490a2c6bb786b8d0f" id="group__SANITIZER__CALLBACK__API_1ga931adc0a0129a4490a2c6bb786b8d0f" shape="rect">
+                                 <!-- --></a><span>struct <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a><a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1ga931adc0a0129a4490a2c6bb786b8d0f" shape="rect">memsetData</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> This is only valid if nodeType is CU_GRAPH_NODE_TYPE_MEMSET. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g86c2a7422b28ed2929f072e3d546b9c3" id="group__SANITIZER__CALLBACK__API_1g86c2a7422b28ed2929f072e3d546b9c3" shape="rect">
+                                 <!-- --></a><span>CUgraphNode  <a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g86c2a7422b28ed2929f072e3d546b9c3" shape="rect">node</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> CUDA graphs node being launched. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1ge6c93bc5c7a5dc8a5d6ec72a42f87526" id="group__SANITIZER__CALLBACK__API_1ge6c93bc5c7a5dc8a5d6ec72a42f87526" shape="rect">
+                                 <!-- --></a><span>CUgraphNodeType  <a href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function. " shape="rect">Sanitizer_GraphNodeLaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1ge6c93bc5c7a5dc8a5d6ec72a42f87526" shape="rect">nodeType</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> CUDA graphs node type. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__LaunchData"><a name="structSanitizer__LaunchData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.7.&nbsp;Sanitizer_LaunchData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a launch callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_LAUNCH. The callback data is only valid within the invocation of the callback function that
+                           is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g0f74ceb1522b0d27bb1d38ce41f83d73" shape="rect">apiContext</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g73236f03601aa99a589d4c46a4a8c19e" shape="rect">apiStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__LaunchData_18d3cab763b1f9e9907c02809185df3f5" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUdevice &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g54ac0dec13a70e0cb9d1dc3849c40063" shape="rect">device</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUfunction &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g6ae473df62bfb4cac682ebedaf8627fd" shape="rect">function</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">const 
+                              char 
+                              *&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gf217ff198ada2e206aa01e3e2f4aaef8" shape="rect">functionName</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gb9302cae916c7eaab0c6de268b246e59" shape="rect">gridId</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gb4c74f8d8eaa10a76a9eb055e02bbfdb" shape="rect">hApiStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_LaunchHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g57fec3035b443ac0cc7e35908ca53117" shape="rect">hLaunch</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g07a4addf3473a03f38060b769517bd9e" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUmodule &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g149c3ada82b4937473864e2b27bc5825" shape="rect">module</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g670de4d81de9ea2c2a2f875281f3d726" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <h5 class="fake_sectiontitle member_header"></h5>
+                     <dl class="members">
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gd71d9596f42c5280117c58aec28f7677" shape="rect">blockDim_x</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1geaccddc162d325b688fb59813e854df6" shape="rect">blockDim_y</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gdea40e9c9cab2e4b98b0e0abaf04ed7a" shape="rect">blockDim_z</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gc83c9a72971e8b4fcbae6e5299a0bb52" shape="rect">clusterDim_x</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gb69bc0f86a204aef81bbb27ab3599121" shape="rect">clusterDim_y</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g3d0219ba9537466c00a8d8d6f7fe5232" shape="rect">clusterDim_z</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g934581cb477c3d030f30e2b2ee7944d4" shape="rect">gridDim_x</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g66f032ce9b5eaac75a5993167cf282c8" shape="rect">gridDim_y</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g9a0d553822926781996a01e8255ac049" shape="rect">gridDim_z</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g0f74ceb1522b0d27bb1d38ce41f83d73" id="group__SANITIZER__CALLBACK__API_1g0f74ceb1522b0d27bb1d38ce41f83d73" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g0f74ceb1522b0d27bb1d38ce41f83d73" shape="rect">apiContext</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Only valid for graph node launches. This is the context of the stream used in the graph launch API call. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g73236f03601aa99a589d4c46a4a8c19e" id="group__SANITIZER__CALLBACK__API_1g73236f03601aa99a589d4c46a4a8c19e" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g73236f03601aa99a589d4c46a4a8c19e" shape="rect">apiStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Only valid for graph node launches. This is the stream used in the graph launch API call. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gd71d9596f42c5280117c58aec28f7677" id="group__SANITIZER__CALLBACK__API_1gd71d9596f42c5280117c58aec28f7677" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gd71d9596f42c5280117c58aec28f7677" shape="rect">blockDim_x</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1geaccddc162d325b688fb59813e854df6" id="group__SANITIZER__CALLBACK__API_1geaccddc162d325b688fb59813e854df6" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1geaccddc162d325b688fb59813e854df6" shape="rect">blockDim_y</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gdea40e9c9cab2e4b98b0e0abaf04ed7a" id="group__SANITIZER__CALLBACK__API_1gdea40e9c9cab2e4b98b0e0abaf04ed7a" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gdea40e9c9cab2e4b98b0e0abaf04ed7a" shape="rect">blockDim_z</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gc83c9a72971e8b4fcbae6e5299a0bb52" id="group__SANITIZER__CALLBACK__API_1gc83c9a72971e8b4fcbae6e5299a0bb52" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gc83c9a72971e8b4fcbae6e5299a0bb52" shape="rect">clusterDim_x</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gb69bc0f86a204aef81bbb27ab3599121" id="group__SANITIZER__CALLBACK__API_1gb69bc0f86a204aef81bbb27ab3599121" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gb69bc0f86a204aef81bbb27ab3599121" shape="rect">clusterDim_y</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g3d0219ba9537466c00a8d8d6f7fe5232" id="group__SANITIZER__CALLBACK__API_1g3d0219ba9537466c00a8d8d6f7fe5232" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g3d0219ba9537466c00a8d8d6f7fe5232" shape="rect">clusterDim_z</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__LaunchData_18d3cab763b1f9e9907c02809185df3f5" id="structSanitizer__LaunchData_18d3cab763b1f9e9907c02809185df3f5" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#structSanitizer__LaunchData_18d3cab763b1f9e9907c02809185df3f5" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context where the grid is launched. For graph node launches, this is the context in which the kernel will run. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g54ac0dec13a70e0cb9d1dc3849c40063" id="group__SANITIZER__CALLBACK__API_1g54ac0dec13a70e0cb9d1dc3849c40063" shape="rect">
+                                 <!-- --></a><span>CUdevice  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g54ac0dec13a70e0cb9d1dc3849c40063" shape="rect">device</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The device where the grid is launched </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g6ae473df62bfb4cac682ebedaf8627fd" id="group__SANITIZER__CALLBACK__API_1g6ae473df62bfb4cac682ebedaf8627fd" shape="rect">
+                                 <!-- --></a><span>CUfunction  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g6ae473df62bfb4cac682ebedaf8627fd" shape="rect">function</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The function of the grid launch. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gf217ff198ada2e206aa01e3e2f4aaef8" id="group__SANITIZER__CALLBACK__API_1gf217ff198ada2e206aa01e3e2f4aaef8" shape="rect">
+                                 <!-- --></a><span>const 
+                                 
+                                 char 
+                                 * <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gf217ff198ada2e206aa01e3e2f4aaef8" shape="rect">functionName</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The name of the launched function. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g934581cb477c3d030f30e2b2ee7944d4" id="group__SANITIZER__CALLBACK__API_1g934581cb477c3d030f30e2b2ee7944d4" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g934581cb477c3d030f30e2b2ee7944d4" shape="rect">gridDim_x</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g66f032ce9b5eaac75a5993167cf282c8" id="group__SANITIZER__CALLBACK__API_1g66f032ce9b5eaac75a5993167cf282c8" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g66f032ce9b5eaac75a5993167cf282c8" shape="rect">gridDim_y</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g9a0d553822926781996a01e8255ac049" id="group__SANITIZER__CALLBACK__API_1g9a0d553822926781996a01e8255ac049" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g9a0d553822926781996a01e8255ac049" shape="rect">gridDim_z</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Launch properties of the grid. These values are only valid for SANITIZER_CBID_LAUNCH_BEGIN and graph node launch callbacks
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gb9302cae916c7eaab0c6de268b246e59" id="group__SANITIZER__CALLBACK__API_1gb9302cae916c7eaab0c6de268b246e59" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gb9302cae916c7eaab0c6de268b246e59" shape="rect">gridId</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique identifier of the grid launch. For graph node launches, this is only unique within the graphexec launch. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gb4c74f8d8eaa10a76a9eb055e02bbfdb" id="group__SANITIZER__CALLBACK__API_1gb4c74f8d8eaa10a76a9eb055e02bbfdb" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gb4c74f8d8eaa10a76a9eb055e02bbfdb" shape="rect">hApiStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the API stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g57fec3035b443ac0cc7e35908ca53117" id="group__SANITIZER__CALLBACK__API_1g57fec3035b443ac0cc7e35908ca53117" shape="rect">
+                                 <!-- --></a><span>Sanitizer_LaunchHandle  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g57fec3035b443ac0cc7e35908ca53117" shape="rect">hLaunch</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Handle of the grid launch. This is only valid between the launch begin and end callbacks. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g07a4addf3473a03f38060b769517bd9e" id="group__SANITIZER__CALLBACK__API_1g07a4addf3473a03f38060b769517bd9e" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g07a4addf3473a03f38060b769517bd9e" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g149c3ada82b4937473864e2b27bc5825" id="group__SANITIZER__CALLBACK__API_1g149c3ada82b4937473864e2b27bc5825" shape="rect">
+                                 <!-- --></a><span>CUmodule  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g149c3ada82b4937473864e2b27bc5825" shape="rect">module</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The module containing the grid code. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g670de4d81de9ea2c2a2f875281f3d726" id="group__SANITIZER__CALLBACK__API_1g670de4d81de9ea2c2a2f875281f3d726" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html" title="" shape="rect">Sanitizer_LaunchData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g670de4d81de9ea2c2a2f875281f3d726" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream where the grid is launched. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__MemcpyData"><a name="structSanitizer__MemcpyData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.8.&nbsp;Sanitizer_MemcpyData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a launch callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_MEMCPY. The callback data is only valid within the invocation of the callback function that
+                           is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_long_type"><a href="modules.html#group__SANITIZER__CALLBACK__API_1g6dd430318fea9a813020c974d07da85e" title="Memcpy direction. " shape="rect">Sanitizer_MemcpyDirection</a>&nbsp;</span><span class="member_name_long_type"><a href="#group__SANITIZER__CALLBACK__API_1g01d588f3dbd03429170cf7a9c64ecbca" shape="rect">direction</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g176afbebea17970c434b9d5a7c1e2eb9" shape="rect">dstAddress</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1ga536604f8271c4d7d3c77ced6bb87899" shape="rect">dstContext</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g9a4d69875b446d382590721f3e352ab1" shape="rect">dstPitch</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gf11d697d3d994de8b25059b1992b3135" shape="rect">dstStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g3e5d47e9ca81bbf4192dc9cd4958ca9d" shape="rect">hDstStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gbe70ebd1173d6137ca064e66b4b99965" shape="rect">hSrcStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gd42ab4aa1a7f1ffbfe4e3787d45141f6" shape="rect">isAsync</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g297d5464c98df6630501e117c1262b48" shape="rect">size</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gb300021e73a68db7b679bebfc81425e6" shape="rect">srcAddress</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__MemcpyData_19c415864d97d1b026c13c9274bfe3125" shape="rect">srcContext</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gc851b50eb12aa0e38d1bf5e349b5a66b" shape="rect">srcPitch</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g5dbf45c2f3f09b40d901628ab557ef48" shape="rect">srcStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g9bb9e8fa40bb441864e2620ebb2eb430" shape="rect">width</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g01d588f3dbd03429170cf7a9c64ecbca" id="group__SANITIZER__CALLBACK__API_1g01d588f3dbd03429170cf7a9c64ecbca" shape="rect">
+                                 <!-- --></a><span><a href="modules.html#group__SANITIZER__CALLBACK__API_1g6dd430318fea9a813020c974d07da85e" title="Memcpy direction. " shape="rect">Sanitizer_MemcpyDirection</a><a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g01d588f3dbd03429170cf7a9c64ecbca" shape="rect">direction</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The direction of the transfer </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g176afbebea17970c434b9d5a7c1e2eb9" id="group__SANITIZER__CALLBACK__API_1g176afbebea17970c434b9d5a7c1e2eb9" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g176afbebea17970c434b9d5a7c1e2eb9" shape="rect">dstAddress</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The destination allocation address. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1ga536604f8271c4d7d3c77ced6bb87899" id="group__SANITIZER__CALLBACK__API_1ga536604f8271c4d7d3c77ced6bb87899" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1ga536604f8271c4d7d3c77ced6bb87899" shape="rect">dstContext</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context where the destination allocation is located </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g9a4d69875b446d382590721f3e352ab1" id="group__SANITIZER__CALLBACK__API_1g9a4d69875b446d382590721f3e352ab1" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g9a4d69875b446d382590721f3e352ab1" shape="rect">dstPitch</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The destination allocation pitch. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gf11d697d3d994de8b25059b1992b3135" id="group__SANITIZER__CALLBACK__API_1gf11d697d3d994de8b25059b1992b3135" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gf11d697d3d994de8b25059b1992b3135" shape="rect">dstStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream where the memcpy is executed on the destination context </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g3e5d47e9ca81bbf4192dc9cd4958ca9d" id="group__SANITIZER__CALLBACK__API_1g3e5d47e9ca81bbf4192dc9cd4958ca9d" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g3e5d47e9ca81bbf4192dc9cd4958ca9d" shape="rect">hDstStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the destination context stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gbe70ebd1173d6137ca064e66b4b99965" id="group__SANITIZER__CALLBACK__API_1gbe70ebd1173d6137ca064e66b4b99965" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gbe70ebd1173d6137ca064e66b4b99965" shape="rect">hSrcStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the source context stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gd42ab4aa1a7f1ffbfe4e3787d45141f6" id="group__SANITIZER__CALLBACK__API_1gd42ab4aa1a7f1ffbfe4e3787d45141f6" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gd42ab4aa1a7f1ffbfe4e3787d45141f6" shape="rect">isAsync</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Boolean value indicating if the transfer is asynchronous. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g297d5464c98df6630501e117c1262b48" id="group__SANITIZER__CALLBACK__API_1g297d5464c98df6630501e117c1262b48" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g297d5464c98df6630501e117c1262b48" shape="rect">size</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Size of the transfer in bytes. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gb300021e73a68db7b679bebfc81425e6" id="group__SANITIZER__CALLBACK__API_1gb300021e73a68db7b679bebfc81425e6" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gb300021e73a68db7b679bebfc81425e6" shape="rect">srcAddress</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The source allocation address. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__MemcpyData_19c415864d97d1b026c13c9274bfe3125" id="structSanitizer__MemcpyData_19c415864d97d1b026c13c9274bfe3125" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#structSanitizer__MemcpyData_19c415864d97d1b026c13c9274bfe3125" shape="rect">srcContext</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context where the source allocation is located </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gc851b50eb12aa0e38d1bf5e349b5a66b" id="group__SANITIZER__CALLBACK__API_1gc851b50eb12aa0e38d1bf5e349b5a66b" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gc851b50eb12aa0e38d1bf5e349b5a66b" shape="rect">srcPitch</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The source allocation pitch. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g5dbf45c2f3f09b40d901628ab557ef48" id="group__SANITIZER__CALLBACK__API_1g5dbf45c2f3f09b40d901628ab557ef48" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g5dbf45c2f3f09b40d901628ab557ef48" shape="rect">srcStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream where the memcpy is executed on the source context </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g9bb9e8fa40bb441864e2620ebb2eb430" id="group__SANITIZER__CALLBACK__API_1g9bb9e8fa40bb441864e2620ebb2eb430" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function. " shape="rect">Sanitizer_MemcpyData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g9bb9e8fa40bb441864e2620ebb2eb430" shape="rect">width</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Memcpy size configuration. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__MemsetData"><a name="structSanitizer__MemsetData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.9.&nbsp;Sanitizer_MemsetData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a launch callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_MEMSET. The callback data is only valid within the invocation of the callback function that
+                           is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g86864b17ab8ef4bcbdf9cf27ea86b6a9" shape="rect">address</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__MemsetData_17581f56f720dccbc68fedddacb839992" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g0246494f29ba1644b2a3abb5ac2d6cee" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g25e97b753473f3e78a76cbe75d66758c" shape="rect">isAsync</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g568656a07f80c2747dfd6eaf3ac6fa95" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g5fc409e9d272bef19b26b754103152f2" shape="rect">value</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gdf48f929e8ccaf649688cdfac51b63a2" shape="rect">width</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g86864b17ab8ef4bcbdf9cf27ea86b6a9" id="group__SANITIZER__CALLBACK__API_1g86864b17ab8ef4bcbdf9cf27ea86b6a9" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g86864b17ab8ef4bcbdf9cf27ea86b6a9" shape="rect">address</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The address of the memset start. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__MemsetData_17581f56f720dccbc68fedddacb839992" id="structSanitizer__MemsetData_17581f56f720dccbc68fedddacb839992" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>::<a href="annotated.html#structSanitizer__MemsetData_17581f56f720dccbc68fedddacb839992" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context where the allocation is located. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g0246494f29ba1644b2a3abb5ac2d6cee" id="group__SANITIZER__CALLBACK__API_1g0246494f29ba1644b2a3abb5ac2d6cee" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g0246494f29ba1644b2a3abb5ac2d6cee" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g25e97b753473f3e78a76cbe75d66758c" id="group__SANITIZER__CALLBACK__API_1g25e97b753473f3e78a76cbe75d66758c" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g25e97b753473f3e78a76cbe75d66758c" shape="rect">isAsync</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Boolean value indicating if the transfer is asynchronous. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g568656a07f80c2747dfd6eaf3ac6fa95" id="group__SANITIZER__CALLBACK__API_1g568656a07f80c2747dfd6eaf3ac6fa95" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g568656a07f80c2747dfd6eaf3ac6fa95" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream where the memset is executed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g5fc409e9d272bef19b26b754103152f2" id="group__SANITIZER__CALLBACK__API_1g5fc409e9d272bef19b26b754103152f2" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g5fc409e9d272bef19b26b754103152f2" shape="rect">value</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Value to be written. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gdf48f929e8ccaf649688cdfac51b63a2" id="group__SANITIZER__CALLBACK__API_1gdf48f929e8ccaf649688cdfac51b63a2" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function. " shape="rect">Sanitizer_MemsetData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gdf48f929e8ccaf649688cdfac51b63a2" shape="rect">width</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Memset size configuration. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__ResourceArrayData"><a name="structSanitizer__ResourceArrayData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.10.&nbsp;Sanitizer_ResourceArrayData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a CUDA array callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal tp SANITIZER_CB_DOMAIN_RESOURCE and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_RESOURCE_ARRAY_CREATED or SANITIZER_CBID_RESOURCE_ARRAY_DESTROYED. The callback data is only valid
+                           within the invocation of the callback function that is passed the data. If you need to retain some data for use outside of
+                           the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__ResourceArrayData_1b354f3f344d959d4a9348a8785d62d79" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUarray &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g6dbe2da80b68f48859499c24d325b9f0" shape="rect">hArray</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gda45296bad0f62f6df2ca07a7b545794" shape="rect">width</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__ResourceArrayData_1b354f3f344d959d4a9348a8785d62d79" id="structSanitizer__ResourceArrayData_1b354f3f344d959d4a9348a8785d62d79" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__ResourceArrayData" title="Data passed into a CUDA array callback function. " shape="rect">Sanitizer_ResourceArrayData</a>::<a href="annotated.html#structSanitizer__ResourceArrayData_1b354f3f344d959d4a9348a8785d62d79" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context containing the array being created or destroyed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g6dbe2da80b68f48859499c24d325b9f0" id="group__SANITIZER__CALLBACK__API_1g6dbe2da80b68f48859499c24d325b9f0" shape="rect">
+                                 <!-- --></a><span>CUarray  <a href="annotated.html#structSanitizer__ResourceArrayData" title="Data passed into a CUDA array callback function. " shape="rect">Sanitizer_ResourceArrayData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g6dbe2da80b68f48859499c24d325b9f0" shape="rect">hArray</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The CUDA array being created or destroyed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gda45296bad0f62f6df2ca07a7b545794" id="group__SANITIZER__CALLBACK__API_1gda45296bad0f62f6df2ca07a7b545794" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__ResourceArrayData" title="Data passed into a CUDA array callback function. " shape="rect">Sanitizer_ResourceArrayData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gda45296bad0f62f6df2ca07a7b545794" shape="rect">width</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The CUDA array size. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__ResourceContextData"><a name="structSanitizer__ResourceContextData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.11.&nbsp;Sanitizer_ResourceContextData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a context resource callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_RESOURCE and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_RESOURCE_CONTEXT_CREATION_STARTING, SANITIZER_CBID_RESOURCE_CONTEXT_CREATION_FINISHED, SANITIZER_CBID_RESOURCE_CONTEXT_DESTROY_STARTING
+                           or SANITIZER_CBID_RESOURCE_CONTEXT_DESTROY_FINISHED. The callback data is only valid within the invocation of the callback
+                           function that is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of
+                           it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__ResourceContextData_1d5157aa6ab20d08ad9bf3eb0a1b1dcd5" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUdevice &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gf1b86ab2888f0132953f56bfb63bfb38" shape="rect">device</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__ResourceContextData_1d5157aa6ab20d08ad9bf3eb0a1b1dcd5" id="structSanitizer__ResourceContextData_1d5157aa6ab20d08ad9bf3eb0a1b1dcd5" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__ResourceContextData" title="Data passed into a context resource callback function. " shape="rect">Sanitizer_ResourceContextData</a>::<a href="annotated.html#structSanitizer__ResourceContextData_1d5157aa6ab20d08ad9bf3eb0a1b1dcd5" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context being created or destroyed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gf1b86ab2888f0132953f56bfb63bfb38" id="group__SANITIZER__CALLBACK__API_1gf1b86ab2888f0132953f56bfb63bfb38" shape="rect">
+                                 <!-- --></a><span>CUdevice  <a href="annotated.html#structSanitizer__ResourceContextData" title="Data passed into a context resource callback function. " shape="rect">Sanitizer_ResourceContextData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gf1b86ab2888f0132953f56bfb63bfb38" shape="rect">device</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The device on which the context is being created or destroyed. This field is only valid for SANITIZER_CBID_RESOURCE_CONTEXT_CREATION_*
+                                    callbacks 
+                                 </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__ResourceFunctionsLazyLoadedData"><a name="structSanitizer__ResourceFunctionsLazyLoadedData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.12.&nbsp;Sanitizer_ResourceFunctionsLazyLoadedData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a CUDA function callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal tp SANITIZER_CB_DOMAIN_RESOURCE and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_RESOURCE_FUNCTIONS_LAZY_LOADED. The callback data is only valid within the invocation of the callback
+                           function that is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of
+                           it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__ResourceFunctionsLazyLoadedData_15e591a51248ceefdef70b6022fb913dd" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">const 
+                              CUfunction 
+                              *&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g54c88e675e099bc4f01351f871107aab" shape="rect">functions</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUmodule &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g549f330264682c91331b433868c166fc" shape="rect">module</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g2fc6eb609d8345b59f58b5469e73e121" shape="rect">numFunctions</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__ResourceFunctionsLazyLoadedData_15e591a51248ceefdef70b6022fb913dd" id="structSanitizer__ResourceFunctionsLazyLoadedData_15e591a51248ceefdef70b6022fb913dd" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData" title="Data passed into a CUDA function callback function. " shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a>::<a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData_15e591a51248ceefdef70b6022fb913dd" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context containing the functions. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g54c88e675e099bc4f01351f871107aab" id="group__SANITIZER__CALLBACK__API_1g54c88e675e099bc4f01351f871107aab" shape="rect">
+                                 <!-- --></a><span>const 
+                                 
+                                 CUfunction 
+                                 * <a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData" title="Data passed into a CUDA function callback function. " shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g54c88e675e099bc4f01351f871107aab" shape="rect">functions</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> An array containing the functions. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g549f330264682c91331b433868c166fc" id="group__SANITIZER__CALLBACK__API_1g549f330264682c91331b433868c166fc" shape="rect">
+                                 <!-- --></a><span>CUmodule  <a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData" title="Data passed into a CUDA function callback function. " shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g549f330264682c91331b433868c166fc" shape="rect">module</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The module containing the functions. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g2fc6eb609d8345b59f58b5469e73e121" id="group__SANITIZER__CALLBACK__API_1g2fc6eb609d8345b59f58b5469e73e121" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData" title="Data passed into a CUDA function callback function. " shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g2fc6eb609d8345b59f58b5469e73e121" shape="rect">numFunctions</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The size of the function array. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__ResourceMemoryData"><a name="structSanitizer__ResourceMemoryData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.13.&nbsp;Sanitizer_ResourceMemoryData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a memory resource callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_RESOURCE and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_RESOURCE_DEVICE_MEMORY_ALLOC, SANITIZER_CBID_RESOURCE_DEVICE_MEMORY_FREE, SANITIZER_CBID_RESOURCE_HOST_MEMORY_ALLOC,
+                           SANITIZER_CBID_RESOURCE_HOST_MEMORY_FREE, SANITIZER_CBID_RESOURCE_MEMORY_ALLOC_ASYNC, SANITIZER_CBID_RESOURCE_MEMORY_FREE_ASYNC
+                           or SANITIZER_CBID_RESOURCE_MEMORY_FREE_ASYNC_DONE. The callback data is only valid within the invocation of the callback function
+                           that is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#structSanitizer__ResourceMemoryData_18dc887749dd6a0163ac54d331b1280ad" shape="rect">address</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g306fed61e5fc1aefe907f67b6aeb3c7b" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUdevice &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gc23e893ab78877ab395678c4dc1bddfa" shape="rect">device</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g7bee77cc4075471b0397cf557c843c4a" shape="rect">flags</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g9cd401e3148076d3b5cabcdbf54f3f33" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUmemoryPool &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gbe9335a4874c70f9e8fdc287b8a14a38" shape="rect">memoryPool</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint32_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gfa68ea5df21d945ae35162a7573c4d61" shape="rect">permissions</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gf33b6cf45e80c06fc9130c719d6e13c7" shape="rect">size</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUdevice &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g34ae0e07bbf2f9ae371d132c59138ce0" shape="rect">sourceDevice</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1gbb146be5d2857f1294a1af6edf28f6f5" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_long_type"><a href="modules.html#group__SANITIZER__CALLBACK__API_1g62d02f306fdb955ab1f5add810c45564" title="Specifies the visibility of an allocation. " shape="rect">Sanitizer_MemoryVisibility</a>&nbsp;</span><span class="member_name_long_type"><a href="#group__SANITIZER__CALLBACK__API_1g5838f90e131f6b6761c39986b9b6efd8" shape="rect">visibility</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__ResourceMemoryData_18dc887749dd6a0163ac54d331b1280ad" id="structSanitizer__ResourceMemoryData_18dc887749dd6a0163ac54d331b1280ad" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#structSanitizer__ResourceMemoryData_18dc887749dd6a0163ac54d331b1280ad" shape="rect">address</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Address of the allocation being created or destroyed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g306fed61e5fc1aefe907f67b6aeb3c7b" id="group__SANITIZER__CALLBACK__API_1g306fed61e5fc1aefe907f67b6aeb3c7b" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g306fed61e5fc1aefe907f67b6aeb3c7b" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Context containing the allocation being created or destroyed. Can be NULL if the allocation is not attached to a context.
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gc23e893ab78877ab395678c4dc1bddfa" id="group__SANITIZER__CALLBACK__API_1gc23e893ab78877ab395678c4dc1bddfa" shape="rect">
+                                 <!-- --></a><span>CUdevice  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gc23e893ab78877ab395678c4dc1bddfa" shape="rect">device</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Device where the allocation is being created. Available for all cbid with a driver version of 455 or newer. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g7bee77cc4075471b0397cf557c843c4a" id="group__SANITIZER__CALLBACK__API_1g7bee77cc4075471b0397cf557c843c4a" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g7bee77cc4075471b0397cf557c843c4a" shape="rect">flags</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Allocation details: use Sanitizer_ResourceMemoryFlags to interpret this field. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g9cd401e3148076d3b5cabcdbf54f3f33" id="group__SANITIZER__CALLBACK__API_1g9cd401e3148076d3b5cabcdbf54f3f33" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g9cd401e3148076d3b5cabcdbf54f3f33" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Stream containing the allocation being created or destroyed. Can be NULL if the allocation is not attached to a stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gbe9335a4874c70f9e8fdc287b8a14a38" id="group__SANITIZER__CALLBACK__API_1gbe9335a4874c70f9e8fdc287b8a14a38" shape="rect">
+                                 <!-- --></a><span>CUmemoryPool  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gbe9335a4874c70f9e8fdc287b8a14a38" shape="rect">memoryPool</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Memory pool containing the allocation being created or destroyed. Can be NULL if the allocation is not attached to a memory
+                                    pool. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gfa68ea5df21d945ae35162a7573c4d61" id="group__SANITIZER__CALLBACK__API_1gfa68ea5df21d945ae35162a7573c4d61" shape="rect">
+                                 <!-- --></a><span>uint32_t  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gfa68ea5df21d945ae35162a7573c4d61" shape="rect">permissions</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Allocation permissions: use Sanitizer_ResourceMemoryPermissions to interpret this field. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gf33b6cf45e80c06fc9130c719d6e13c7" id="group__SANITIZER__CALLBACK__API_1gf33b6cf45e80c06fc9130c719d6e13c7" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gf33b6cf45e80c06fc9130c719d6e13c7" shape="rect">size</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Size of the allocation being created or destroyed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g34ae0e07bbf2f9ae371d132c59138ce0" id="group__SANITIZER__CALLBACK__API_1g34ae0e07bbf2f9ae371d132c59138ce0" shape="rect">
+                                 <!-- --></a><span>CUdevice  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g34ae0e07bbf2f9ae371d132c59138ce0" shape="rect">sourceDevice</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Source device of this allocation (different from device if SANITIZER_MEMORY_FLAG_PEER is set). </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1gbb146be5d2857f1294a1af6edf28f6f5" id="group__SANITIZER__CALLBACK__API_1gbb146be5d2857f1294a1af6edf28f6f5" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1gbb146be5d2857f1294a1af6edf28f6f5" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Public handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g5838f90e131f6b6761c39986b9b6efd8" id="group__SANITIZER__CALLBACK__API_1g5838f90e131f6b6761c39986b9b6efd8" shape="rect">
+                                 <!-- --></a><span><a href="modules.html#group__SANITIZER__CALLBACK__API_1g62d02f306fdb955ab1f5add810c45564" title="Specifies the visibility of an allocation. " shape="rect">Sanitizer_MemoryVisibility</a><a href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function. " shape="rect">Sanitizer_ResourceMemoryData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g5838f90e131f6b6761c39986b9b6efd8" shape="rect">visibility</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Visibility of the allocation. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__ResourceMempoolData"><a name="structSanitizer__ResourceMempoolData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.14.&nbsp;Sanitizer_ResourceMempoolData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a mempool resource callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_RESOURCE and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_RESOURCE_MEMPOOL_CREATED, SANITIZER_CBID_RESOURCE_MEMPOOL_DESTROYING, SANITIZER_CBID_RESOURCE_MEMPOOL_PEER_ACCESS_ENABLED
+                           or SANITIZER_CBID_RESOURCE_MEMPOOL_PEER_ACCESS_DISABLING. The callback data is only valid within the invocation of the callback
+                           function that is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of
+                           it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUdevice &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g9d01c7ed7b6d8b3ea539b530393edb43" shape="rect">device</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUmemoryPool &nbsp;</span><span class="member_name"><a href="#structSanitizer__ResourceMempoolData_13d0781cbd3a394516eba1208292b2b55" shape="rect">memoryPool</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUdevice &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g60c827072502fc8e4aa10c8e8abd8e1b" shape="rect">peerDevice</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g9d01c7ed7b6d8b3ea539b530393edb43" id="group__SANITIZER__CALLBACK__API_1g9d01c7ed7b6d8b3ea539b530393edb43" shape="rect">
+                                 <!-- --></a><span>CUdevice  <a href="annotated.html#structSanitizer__ResourceMempoolData" title="Data passed into a mempool resource callback function. " shape="rect">Sanitizer_ResourceMempoolData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g9d01c7ed7b6d8b3ea539b530393edb43" shape="rect">device</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Device that owns the memory pool. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__ResourceMempoolData_13d0781cbd3a394516eba1208292b2b55" id="structSanitizer__ResourceMempoolData_13d0781cbd3a394516eba1208292b2b55" shape="rect">
+                                 <!-- --></a><span>CUmemoryPool  <a href="annotated.html#structSanitizer__ResourceMempoolData" title="Data passed into a mempool resource callback function. " shape="rect">Sanitizer_ResourceMempoolData</a>::<a href="annotated.html#structSanitizer__ResourceMempoolData_13d0781cbd3a394516eba1208292b2b55" shape="rect">memoryPool</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Memory pool being created or destroyed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g60c827072502fc8e4aa10c8e8abd8e1b" id="group__SANITIZER__CALLBACK__API_1g60c827072502fc8e4aa10c8e8abd8e1b" shape="rect">
+                                 <!-- --></a><span>CUdevice  <a href="annotated.html#structSanitizer__ResourceMempoolData" title="Data passed into a mempool resource callback function. " shape="rect">Sanitizer_ResourceMempoolData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g60c827072502fc8e4aa10c8e8abd8e1b" shape="rect">peerDevice</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Device that access type changed. Available if cbid is SANITIZER_CBID_RESOURCE_MEMPOOL_PEER_ACCESS_ENABLED or SANITIZER_CBID_RESOURCE_MEMPOOL_PEER_ACCESS_DISABLING.
+                                    
+                                 </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__ResourceModuleData"><a name="structSanitizer__ResourceModuleData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.15.&nbsp;Sanitizer_ResourceModuleData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a module resource callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_RESOURCE and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_RESOURCE_MODULE_LOADED or SANITIZER_CBID_RESOURCE_MODULE_UNLOAD_STARTING. The callback data is only
+                           valid within the invocation of the callback function that is passed the data. If you need to retain some data for use outside
+                           of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__ResourceModuleData_19fae992053e5504baa947596f2bf4c8c" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">size_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g4d94a109dba9f60ed5bae597ea93b2b7" shape="rect">cubinSize</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUlibrary &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g0f7484826c1b8bb5f2eca75040fd44cc" shape="rect">library</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUmodule &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g786e3c1a3f4f6d4611f7fa0b4093dca7" shape="rect">module</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">const 
+                              char 
+                              *&nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g39bce574d2d1e1ef944c1090ce01b09a" shape="rect">pCubin</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__ResourceModuleData_19fae992053e5504baa947596f2bf4c8c" id="structSanitizer__ResourceModuleData_19fae992053e5504baa947596f2bf4c8c" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__ResourceModuleData" title="Data passed into a module resource callback function. " shape="rect">Sanitizer_ResourceModuleData</a>::<a href="annotated.html#structSanitizer__ResourceModuleData_19fae992053e5504baa947596f2bf4c8c" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context containing the module being loaded or unloaded. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g4d94a109dba9f60ed5bae597ea93b2b7" id="group__SANITIZER__CALLBACK__API_1g4d94a109dba9f60ed5bae597ea93b2b7" shape="rect">
+                                 <!-- --></a><span>size_t  <a href="annotated.html#structSanitizer__ResourceModuleData" title="Data passed into a module resource callback function. " shape="rect">Sanitizer_ResourceModuleData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g4d94a109dba9f60ed5bae597ea93b2b7" shape="rect">cubinSize</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The size of the cubin. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g0f7484826c1b8bb5f2eca75040fd44cc" id="group__SANITIZER__CALLBACK__API_1g0f7484826c1b8bb5f2eca75040fd44cc" shape="rect">
+                                 <!-- --></a><span>CUlibrary  <a href="annotated.html#structSanitizer__ResourceModuleData" title="Data passed into a module resource callback function. " shape="rect">Sanitizer_ResourceModuleData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g0f7484826c1b8bb5f2eca75040fd44cc" shape="rect">library</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Library associated with the module. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g786e3c1a3f4f6d4611f7fa0b4093dca7" id="group__SANITIZER__CALLBACK__API_1g786e3c1a3f4f6d4611f7fa0b4093dca7" shape="rect">
+                                 <!-- --></a><span>CUmodule  <a href="annotated.html#structSanitizer__ResourceModuleData" title="Data passed into a module resource callback function. " shape="rect">Sanitizer_ResourceModuleData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g786e3c1a3f4f6d4611f7fa0b4093dca7" shape="rect">module</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The module being loaded or unloaded. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g39bce574d2d1e1ef944c1090ce01b09a" id="group__SANITIZER__CALLBACK__API_1g39bce574d2d1e1ef944c1090ce01b09a" shape="rect">
+                                 <!-- --></a><span>const 
+                                 
+                                 char 
+                                 * <a href="annotated.html#structSanitizer__ResourceModuleData" title="Data passed into a module resource callback function. " shape="rect">Sanitizer_ResourceModuleData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g39bce574d2d1e1ef944c1090ce01b09a" shape="rect">pCubin</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Pointer to the associated cubin. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__ResourceStreamData"><a name="structSanitizer__ResourceStreamData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.16.&nbsp;Sanitizer_ResourceStreamData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a stream resource callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_RESOURCE and <tt class="ph tt code">cbid</tt> equal to SANITIZER_CBID_RESOURCE_STREAM_CREATED, SANITIZER_CBID_RESOURCE_STREAM_DESTROY_STARTING or SANITIZER_CBID_RESOURCE_STREAM_DESTROY_FINISHED.
+                           The callback data is only valid within the invocation of the callback function that is passed the data. If you need to retain
+                           some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__ResourceStreamData_17e570056c26d3c785d1e1db0db33cbb0" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g17058d030f8c196b4a250148c3e2c662" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g9ac109c0cc16da3636538dfcebaeac33" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__ResourceStreamData_17e570056c26d3c785d1e1db0db33cbb0" id="structSanitizer__ResourceStreamData_17e570056c26d3c785d1e1db0db33cbb0" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__ResourceStreamData" title="Data passed into a stream resource callback function. " shape="rect">Sanitizer_ResourceStreamData</a>::<a href="annotated.html#structSanitizer__ResourceStreamData_17e570056c26d3c785d1e1db0db33cbb0" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context containing the stream being created or destroyed. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g17058d030f8c196b4a250148c3e2c662" id="group__SANITIZER__CALLBACK__API_1g17058d030f8c196b4a250148c3e2c662" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__ResourceStreamData" title="Data passed into a stream resource callback function. " shape="rect">Sanitizer_ResourceStreamData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g17058d030f8c196b4a250148c3e2c662" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g9ac109c0cc16da3636538dfcebaeac33" id="group__SANITIZER__CALLBACK__API_1g9ac109c0cc16da3636538dfcebaeac33" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__ResourceStreamData" title="Data passed into a stream resource callback function. " shape="rect">Sanitizer_ResourceStreamData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g9ac109c0cc16da3636538dfcebaeac33" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream being created or destroyed. This handle will be NULL for the STREAM_DESTROY_FINISHED cbid. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__SynchronizeData"><a name="structSanitizer__SynchronizeData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.17.&nbsp;Sanitizer_SynchronizeData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a synchronization callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_SYNCHRONIZE. The callback data is only valid within the invocation of the callback function
+                           that is passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__SynchronizeData_1d34a9c9c99413c33abda5b062c3f7477" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g1ef3eb36bdce259175dab94c3cee852d" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g88f86980a41884a31acac2b04f1d42f9" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="structSanitizer__SynchronizeData_1d34a9c9c99413c33abda5b062c3f7477" id="structSanitizer__SynchronizeData_1d34a9c9c99413c33abda5b062c3f7477" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__SynchronizeData" title="Data passed into a synchronization callback function. " shape="rect">Sanitizer_SynchronizeData</a>::<a href="annotated.html#structSanitizer__SynchronizeData_1d34a9c9c99413c33abda5b062c3f7477" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> For SANITIZER_CBID_SYNCHRONIZE_CONTEXT_SYNCHRONIZED, this is the context being synchronized. For SANITIZER_CBID_SYNCHRONIZE_STREAM_SYNCHRONIZED,
+                                    this is the context of the stream being synchronized. 
+                                 </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g1ef3eb36bdce259175dab94c3cee852d" id="group__SANITIZER__CALLBACK__API_1g1ef3eb36bdce259175dab94c3cee852d" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__SynchronizeData" title="Data passed into a synchronization callback function. " shape="rect">Sanitizer_SynchronizeData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g1ef3eb36bdce259175dab94c3cee852d" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g88f86980a41884a31acac2b04f1d42f9" id="group__SANITIZER__CALLBACK__API_1g88f86980a41884a31acac2b04f1d42f9" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__SynchronizeData" title="Data passed into a synchronization callback function. " shape="rect">Sanitizer_SynchronizeData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g88f86980a41884a31acac2b04f1d42f9" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> This field is only valid for SANITIZER_CBID_SYNCHRONIZE_STREAM_SYNCHRONIZED. This is the stream being synchronized. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="topic reference apiRef apiClassifier cppClassifier cppStruct cppGlobalStruct" id="structSanitizer__UvmData"><a name="structSanitizer__UvmData" shape="rect">
+                        <!-- --></a><h3 class="&#xA;            topictitle3 cppClass&#xA;          ">2.18.&nbsp;Sanitizer_UvmData Struct Reference</h3>
+                     <h3>[<a class="xref xref apiRelation cppClassifierModule" href="modules.html" shape="rect">Sanitizer Callback API</a>]
+                     </h3>
+                     <div class="section">
+                        <p>Data passed into a managed memory callback function as the <tt class="ph tt code">cbdata</tt> argument to <a class="xref" href="modules.html#group__SANITIZER__CALLBACK__API_1gf031ccd4dcc013ab017d9ee1032858c4" title="Function type for a callback." shape="rect">Sanitizer_CallbackFunc</a>. The <tt class="ph tt code">cbdata</tt> will be this type for <tt class="ph tt code">domain</tt> equal to SANITIZER_CB_DOMAIN_UVM. The callback data is only valid within the invocation of the callback function that is
+                           passed the data. If you need to retain some data for use outside of the callback, you must make a copy of it. 
+                        </p>
+                     </div>
+                     <h4 class="fake_sectiontitle member_header">Public Variables</h4>
+                     <dl class="members">
+                        <dt><span class="member_type">uint64_t &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g1e8e80e5a6533ffea2ca5a435e0827fe" shape="rect">address</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUcontext &nbsp;</span><span class="member_name"><a href="#structSanitizer__UvmData_1aa8eeb728beef92c5c32ea5ebfc1e15a" shape="rect">context</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">Sanitizer_StreamHandle &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1g0e5aefe3e911df95c5a4b6f0e227467e" shape="rect">hStream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_type">CUstream &nbsp;</span><span class="member_name"><a href="#group__SANITIZER__CALLBACK__API_1ga2452503ea44bf5b345f230da98b9402" shape="rect">stream</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                        <dt><span class="member_long_type"><a href="modules.html#group__SANITIZER__CALLBACK__API_1g62d02f306fdb955ab1f5add810c45564" title="Specifies the visibility of an allocation. " shape="rect">Sanitizer_MemoryVisibility</a>&nbsp;</span><span class="member_name_long_type"><a href="#group__SANITIZER__CALLBACK__API_1g9c9d131f19f523c3c107ea5ea55f6676" shape="rect">visibility</a></span></dt>
+                        <dd class="shortdesc"><span></span><span class="desc"></span></dd>
+                     </dl>
+                     <div class="description">
+                        <h4 class="sectiontitle">Variables</h4>
+                        <dl class="description">
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g1e8e80e5a6533ffea2ca5a435e0827fe" id="group__SANITIZER__CALLBACK__API_1g1e8e80e5a6533ffea2ca5a435e0827fe" shape="rect">
+                                 <!-- --></a><span>uint64_t  <a href="annotated.html#structSanitizer__UvmData" title="Data passed into a managed memory callback function. " shape="rect">Sanitizer_UvmData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g1e8e80e5a6533ffea2ca5a435e0827fe" shape="rect">address</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The address of the allocation. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="structSanitizer__UvmData_1aa8eeb728beef92c5c32ea5ebfc1e15a" id="structSanitizer__UvmData_1aa8eeb728beef92c5c32ea5ebfc1e15a" shape="rect">
+                                 <!-- --></a><span>CUcontext  <a href="annotated.html#structSanitizer__UvmData" title="Data passed into a managed memory callback function. " shape="rect">Sanitizer_UvmData</a>::<a href="annotated.html#structSanitizer__UvmData_1aa8eeb728beef92c5c32ea5ebfc1e15a" shape="rect">context</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The context where the allocation is located. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g0e5aefe3e911df95c5a4b6f0e227467e" id="group__SANITIZER__CALLBACK__API_1g0e5aefe3e911df95c5a4b6f0e227467e" shape="rect">
+                                 <!-- --></a><span>Sanitizer_StreamHandle  <a href="annotated.html#structSanitizer__UvmData" title="Data passed into a managed memory callback function. " shape="rect">Sanitizer_UvmData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g0e5aefe3e911df95c5a4b6f0e227467e" shape="rect">hStream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> Unique handle for the stream. </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1ga2452503ea44bf5b345f230da98b9402" id="group__SANITIZER__CALLBACK__API_1ga2452503ea44bf5b345f230da98b9402" shape="rect">
+                                 <!-- --></a><span>CUstream  <a href="annotated.html#structSanitizer__UvmData" title="Data passed into a managed memory callback function. " shape="rect">Sanitizer_UvmData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1ga2452503ea44bf5b345f230da98b9402" shape="rect">stream</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> The stream on which the memory is attached. This is only valid if visibility is SANITIZER_MEMORY_VISIBILITY_STREAM </p>
+                              </div>
+                           </dd>
+                           <dt class="description"><a name="group__SANITIZER__CALLBACK__API_1g9c9d131f19f523c3c107ea5ea55f6676" id="group__SANITIZER__CALLBACK__API_1g9c9d131f19f523c3c107ea5ea55f6676" shape="rect">
+                                 <!-- --></a><span><a href="modules.html#group__SANITIZER__CALLBACK__API_1g62d02f306fdb955ab1f5add810c45564" title="Specifies the visibility of an allocation. " shape="rect">Sanitizer_MemoryVisibility</a><a href="annotated.html#structSanitizer__UvmData" title="Data passed into a managed memory callback function. " shape="rect">Sanitizer_UvmData</a>::<a href="annotated.html#group__SANITIZER__CALLBACK__API_1g9c9d131f19f523c3c107ea5ea55f6676" shape="rect">visibility</a> [inherited] </span></dt>
+                           <dd class="description">
+                              <div class="section">
+                                 <p> New visibility for the allocation. </p>
+                              </div>
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>

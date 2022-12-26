@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1668056418411" transient="false">
+	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
+		<feature id="org.eclipse.help" version="2.0.102.v20140925-0400" url="features/org.eclipse.help_2.0.102.v20140925-0400/" plugin-identifier="org.eclipse.help.base">
+		</feature>
+		<feature id="org.eclipse.rse.ssh" version="3.0.500.201406020016" url="features/org.eclipse.rse.ssh_3.0.500.201406020016/" plugin-identifier="org.eclipse.rse.services.ssh">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature" version="1.0.0.v20140827-1444" url="features/org.eclipse.ecf.filetransfer.httpclient4.ssl.feature_1.0.0.v20140827-1444/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.extras.feature" version="1.2.0.v20140911-0143" url="features/org.eclipse.equinox.p2.extras.feature_1.2.0.v20140911-0143/">
+		</feature>
+		<feature id="org.eclipse.rse.core" version="3.4.100.201406091451" url="features/org.eclipse.rse.core_3.4.100.201406091451/">
+		</feature>
+		<feature id="com.nvidia.cuda.ide.remote.feature" version="12.0.0.202211100455" url="features/com.nvidia.cuda.ide.remote.feature_12.0.0.202211100455/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.core.feature" version="1.3.0.v20140523-0116" url="features/org.eclipse.equinox.p2.core.feature_1.3.0.v20140523-0116/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.httpclient4.feature" version="3.9.1.v20140827-1444" url="features/org.eclipse.ecf.filetransfer.httpclient4.feature_3.9.1.v20140827-1444/">
+		</feature>
+		<feature id="org.eclipse.emf.common" version="2.10.1.v20140901-1043" url="features/org.eclipse.emf.common_2.10.1.v20140901-1043/">
+		</feature>
+		<feature id="org.eclipse.rse.local" version="2.1.500.201406020016" url="features/org.eclipse.rse.local_2.1.500.201406020016/" plugin-identifier="org.eclipse.rse.services.local">
+		</feature>
+		<feature id="org.eclipse.ecf.core.feature" version="1.1.0.v20140827-1444" url="features/org.eclipse.ecf.core.feature_1.1.0.v20140827-1444/">
+		</feature>
+		<feature id="org.eclipse.emf.ecore" version="2.10.1.v20140901-1043" url="features/org.eclipse.emf.ecore_2.10.1.v20140901-1043/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.ssl.feature" version="1.0.0.v20140827-1444" url="features/org.eclipse.ecf.filetransfer.ssl.feature_1.0.0.v20140827-1444/">
+		</feature>
+		<feature id="com.nvidia.cuda.ide.editor.feature" version="12.0.0.202211100455" url="features/com.nvidia.cuda.ide.editor.feature_12.0.0.202211100455/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.rcp.feature" version="1.2.0.v20140523-0116" url="features/org.eclipse.equinox.p2.rcp.feature_1.2.0.v20140523-0116/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.user.ui" version="2.2.0.v20140911-0143" url="features/org.eclipse.equinox.p2.user.ui_2.2.0.v20140911-0143/">
+		</feature>
+		<feature id="com.nvidia.viper.feature" version="12.0.0.202211100455" url="features/com.nvidia.viper.feature_12.0.0.202211100455/">
+		</feature>
+		<feature id="org.eclipse.e4.rcp" version="1.3.100.v20140909-1633" url="features/org.eclipse.e4.rcp_1.3.100.v20140909-1633/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.feature" version="3.9.0.v20140827-1444" url="features/org.eclipse.ecf.filetransfer.feature_3.9.0.v20140827-1444/">
+		</feature>
+		<feature id="org.eclipse.ecf.core.ssl.feature" version="1.0.0.v20140827-1444" url="features/org.eclipse.ecf.core.ssl.feature_1.0.0.v20140827-1444/">
+		</feature>
+		<feature id="org.eclipse.platform" version="4.4.0.v20140925-0400" url="features/org.eclipse.platform_4.4.0.v20140925-0400/">
+		</feature>
+		<feature id="org.eclipse.rcp" version="4.4.0.v20140925-0400" url="features/org.eclipse.rcp_4.4.0.v20140925-0400/">
+		</feature>
+	</site>
+</config>

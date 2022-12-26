@@ -1,0 +1,15 @@
+EXPORTS
+
+__nvJitLinkCreate_12_0
+__nvJitLinkDestroy_12_0
+__nvJitLinkAddData_12_0
+__nvJitLinkAddFile_12_0
+__nvJitLinkComplete_12_0
+__nvJitLinkGetLinkedCubinSize_12_0
+__nvJitLinkGetLinkedCubin_12_0
+__nvJitLinkGetLinkedPtxSize_12_0
+__nvJitLinkGetLinkedPtx_12_0
+__nvJitLinkGetErrorLogSize_12_0
+__nvJitLinkGetErrorLog_12_0
+__nvJitLinkGetInfoLogSize_12_0
+__nvJitLinkGetInfoLog_12_0

@@ -1,0 +1,616 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="concept"></meta>
+      <meta name="DC.Title" content="Compute Sanitizer API Reference manual"></meta>
+      <meta name="abstract" content="The reference manual for Compute Sanitizer API."></meta>
+      <meta name="description" content="The reference manual for Compute Sanitizer API."></meta>
+      <meta name="DC.Coverage" content="Developer Interfaces"></meta>
+      <meta name="DC.subject" content="Sanitizer Api Guide"></meta>
+      <meta name="keywords" content="Sanitizer Api Guide"></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="abstract"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>Compute Sanitizer API Reference Manual :: Compute Sanitizer Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      --&gt;
+      
+      <script src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="https://docs.nvidia.com/compute-sanitizer/SanitizerApiGuide/index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">Compute Sanitizer Documentation</span><form id="search" method="get" action="search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="../index.html" title="The root of the site.">Compute Sanitizer
+                  v2022.4.0</a></div>
+            <div class="category"><a href="index.html" title="Compute Sanitizer API Reference Manual">Compute Sanitizer API Reference Manual</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="#introduction">1.&nbsp;Introduction</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="#about-sanitizer-api">1.1.&nbsp;Overview</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="#usage">2.&nbsp;Usage</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="#compatibility-and-requirements">2.1.&nbsp;Compatibility and Requirements</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#callback-api">2.2.&nbsp;Callback API</a></div>
+                        <ul>
+                           <li>
+                              <div class="section-link"><a href="#driver-runtime-api-callbacks">2.2.1.&nbsp;Driver and Runtime API Callbacks</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#resource-callbacks">2.2.2.&nbsp;Resource Callbacks</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#synchronization-callbacks">2.2.3.&nbsp;Synchronization Callbacks</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#launch-callbacks">2.2.4.&nbsp;Launch Callbacks</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#memcpy-callbacks">2.2.5.&nbsp;Memcpy Callbacks</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#memset-callbacks">2.2.6.&nbsp;Memset Callbacks</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#batch-memop-callbacks">2.2.7.&nbsp;Batch Memory Operations Callbacks</a></div>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#patching-api">2.3.&nbsp;Patching API</a></div>
+                        <ul>
+                           <li>
+                              <div class="section-link"><a href="#write-patch">2.3.1.&nbsp;Writing a Patch</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#insert-patch">2.3.2.&nbsp;Insert a Patch</a></div>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#memory-api">2.4.&nbsp;Memory API</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="#limitations">3.&nbsp;Limitations</a></div>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="release-info">Compute Sanitizer API Reference Manual
+                  (<a href="../pdf/SanitizerApiGuide.pdf">PDF</a>)
+                  
+                  -
+                  
+                  v2022.4.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated July 5, 2022
+                  -
+                  <a href="mailto:devtools@nvidia.com?subject=Compute Sanitizer Documentation Feedback: Compute Sanitizer API Reference Manual">Send Feedback</a></div>
+            </div>
+            <article id="contents">
+               <div class="topic nested0" id="abstract"><a name="abstract" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#abstract" name="abstract" shape="rect">Compute Sanitizer API Reference manual</a></h2>
+                  <div class="body conbody">
+                     <p class="shortdesc">The reference manual for Compute Sanitizer API.</p>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="introduction"><a name="introduction" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#introduction" name="introduction" shape="rect">1.&nbsp;Introduction</a></h2>
+                  <div class="body conbody"></div>
+                  <div class="topic concept nested1" id="about-sanitizer-api"><a name="about-sanitizer-api" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#about-sanitizer-api" name="about-sanitizer-api" shape="rect">1.1.&nbsp;Overview</a></h3>
+                     <div class="body conbody">
+                        <p class="p">The Compute Sanitizer API enables the creation of sanitizing and tracing tools that
+                           target CUDA applications. Examples of such tools are memory and race condition checkers.
+                           The Compute Sanitizer API is composed of three APIs: the callback API, the patching API
+                           and the memory API. It is delivered as a dynamic library on supported platforms. 
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="usage"><a name="usage" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#usage" name="usage" shape="rect">2.&nbsp;Usage</a></h2>
+                  <div class="body conbody"></div>
+                  <div class="topic concept nested1" id="compatibility-and-requirements"><a name="compatibility-and-requirements" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#compatibility-and-requirements" name="compatibility-and-requirements" shape="rect">2.1.&nbsp;Compatibility and Requirements</a></h3>
+                     <div class="body conbody">
+                        <p class="p">
+                           The Compute Sanitizer tools require CUDA 11.0 or newer.
+                           
+                        </p>
+                        <p class="p">
+                           The Compute Sanitizer API requires CUDA 10.1 or newer. Compute Sanitizer API calls will fail with
+                           <samp class="ph codeph">SANITIZER_ERROR_NOT_INITIALIZED</samp> if the CUDA driver version is not
+                           compatible with the Compute Sanitizer version.
+                           
+                        </p>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="callback-api"><a name="callback-api" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#callback-api" name="callback-api" shape="rect">2.2.&nbsp;Callback API</a></h3>
+                     <div class="body conbody">
+                        <p class="p">The Compute Sanitizer Callback API allows you to register a callback into user code. The
+                           callback is invoked when the application calls a CUDA runtime or driver function, or
+                           when certain events occur in the CUDA driver. The following terminology is used by the
+                           Callback API. 
+                        </p>
+                        <ul class="ul">
+                           <li class="li">
+                              <p class="p"><strong class="ph b">Callback domain:</strong>
+                                 Callbacks are grouped into domains to make it easier to associate callback
+                                 functions with groups of related CUDA functions or events.
+                                 The following callback domains are defined by <samp class="ph codeph">Sanitizer_CallbackDomain</samp>.
+                                 
+                              </p>
+                              <ol class="ol">
+                                 <li class="li">CUDA driver functions</li>
+                                 <li class="li">CUDA runtime functions</li>
+                                 <li class="li">CUDA resource tracking</li>
+                                 <li class="li">CUDA synchronization notification</li>
+                                 <li class="li">CUDA grid launches</li>
+                                 <li class="li">CUDA memcpy operations</li>
+                                 <li class="li">CUDA memset operations</li>
+                                 <li class="li">CUDA batch memory operations</li>
+                              </ol>
+                           </li>
+                           <li class="li">
+                              <p class="p"><strong class="ph b">Callback ID:</strong> Each callback is given a unique ID within the corresponding
+                                 callback domain in order to identify it within the callback function. The CUDA
+                                 driver API IDs are defined in <samp class="ph codeph">sanitizer_driver_cbid.h</samp> and the
+                                 CUDA runtime API IDs are defined in <samp class="ph codeph">sanitizer_runtime_cbid.h</samp>.
+                                 Other callback IDs are defined in <samp class="ph codeph">sanitizer_callbacks.h</samp>. All of
+                                 these headers are included as part of <samp class="ph codeph">sanitizer.h</samp>. 
+                              </p>
+                           </li>
+                           <li class="li">
+                              <p class="p"><strong class="ph b">Callback Function:</strong> The callback function must be of the type
+                                 <samp class="ph codeph">Sanitizer_CallbackFunc</samp>. This function type has two
+                                 arguments that specify the callback: the domain and the ID that identifies why
+                                 the callback is occurring. The type also has a <samp class="ph codeph">cbdata</samp> argument
+                                 that is used to pass data specific to the callback. 
+                              </p>
+                           </li>
+                           <li class="li">
+                              <p class="p"><strong class="ph b">Subscriber:</strong> A subscriber is used to associate each of the callback
+                                 functions with one or more CUDA API functions. There can be at most one
+                                 subscriber initialized with <samp class="ph codeph">sanitizerSubscribe</samp> at any time.
+                                 Before initializing a new subscriber, the existing one must be finalized with
+                                 <samp class="ph codeph">sanitizerUnsubscribe</samp> .
+                              </p>
+                           </li>
+                        </ul>
+                        <p class="p">
+                           The subscriber should be initialized prior to making any CUDA API call to ensure
+                           correctness of the reported data.
+                           
+                        </p>
+                        <p class="p">Each callback domain is described in detail below. Unless explicitly stated, it is not
+                           supported to call any CUDA runtime or driver API from within a callback function. Doing
+                           so may cause the application to hang. However, it is supported to call <a class="xref" href="index.html#memory-api" shape="rect">Compute Sanitizer Memory APIs</a> from within callback
+                           functions. 
+                        </p>
+                     </div>
+                     <div class="topic concept nested2" id="driver-runtime-api-callbacks"><a name="driver-runtime-api-callbacks" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#driver-runtime-api-callbacks" name="driver-runtime-api-callbacks" shape="rect">2.2.1.&nbsp;Driver and Runtime API Callbacks</a></h3>
+                        <div class="body conbody">
+                           <p class="p">Using the Callback API with the <samp class="ph codeph">SANITIZER_CB_DOMAIN_DRIVER_API</samp> or
+                              <samp class="ph codeph">SANITIZER_CB_DOMAIN_RUNTIME_API</samp> domains, a callback function can be
+                              associated with one or more CUDA API functions. When those CUDA functions are called in
+                              the application, the callback function is invoked as well. For these domains, the
+                              <samp class="ph codeph">cbdata</samp> argument to the callback function will be of the type
+                              <samp class="ph codeph">Sanitizer_CallbackData</samp>. 
+                           </p>
+                           <p class="p">You can call <samp class="ph codeph">cudaDeviceSynchronize</samp>, <samp class="ph codeph">cudaStreamSynchronize</samp>,
+                              <samp class="ph codeph">cuCtxSynchronize</samp> and <samp class="ph codeph">cuStreamSynchronize</samp> from
+                              within a driver or runtime API callback function. 
+                           </p>
+                           <p class="p">The following code shows a typical sequence used to associate a callback function with
+                              one or more CUDA API functions. For simplicity, error checking code was removed. 
+                           </p><pre xml:space="preserve">
+Sanitizer_SubscriberHandle handle;
+MyDataStruct *my_data = ...;
+...
+sanitizerSubscribe(&amp;handle, my_callback, my_data);
+sanitizerEnableDomain(1, handle, SANITIZER_CB_DOMAIN_RUNTIME_API);
+        </pre><p class="p">First, <samp class="ph codeph">sanitizerSubscribe</samp> is used to initialize a subscriber with the
+                              <samp class="ph codeph">my_callback</samp> callback function. Next,
+                              <samp class="ph codeph">sanitizerEnableDomain</samp> is used to associate that callback with all
+                              the CUDA runtime functions. Using this code sequence will cause
+                              <samp class="ph codeph">my_callback</samp> to be called twice each time any of the CUDA runtime
+                              API functions are invoked, once on entry to the CUDA function and once just before the
+                              CUDA function exits. Compute Sanitizer callback API functions
+                              <samp class="ph codeph">sanitizerEnableCallback</samp> and
+                              <samp class="ph codeph">sanitizerEnableAllDomains</samp> can also be used to associate CUDA API
+                              functions with a callback. 
+                           </p>
+                           <p class="p">The following code shows a typical callback function. </p><pre xml:space="preserve">
+void SANITIZERAPI
+my_callback(void *userdata,
+            Sanitizer_CallbackDomain domain,
+            Sanitizer_CallbackId cbid,
+            const void *cbdata)
+{
+    const Sanitizer_CallbackData *cbInfo = (Sanitizer_CallbackData *)cbdata;
+    MyDataStruct *my_data = (MyDataStruct *)userdata;
+
+    if ((domain == SANITIZER_CB_DOMAIN_RUNTIME_API) &amp;&amp;
+        (cbid == SANITIZER_RUNTIME_TRACE_CBID_cudaMemcpy_v3020) &amp;&amp;
+        (cbInfo-&gt;callbackSite == SANITIZER_API_ENTER))
+    {
+        cudaMemcpy_v3020_params *funcParams = (cudaMemcpy_v3020_params *)(cbInfo-&gt;functionParams);
+        size_t count = funcParams-&gt;count;
+        enum cudaMemcpyKind kind = funcParams-&gt;kind
+        ...
+    }
+    ...
+}
+        </pre><p class="p">In the callback function, <samp class="ph codeph">Sanitizer_CallbackDomain</samp> and
+                              <samp class="ph codeph">Sanitizer_CallbackId</samp> parameters can be used to determine which CUDA
+                              API function invocation is triggering this callback. In the example above, we are
+                              checking for the CUDA runtime <samp class="ph codeph">cudaMemcpy</samp> function. The
+                              <samp class="ph codeph">cbdata</samp> parameter holds a structure of useful information that can
+                              be used within the callback. In this case, we use the <samp class="ph codeph">callbackSite</samp>
+                              member of the structure to detect that the callback is occurring on entry to
+                              <samp class="ph codeph">cudaMemcpy</samp>, and we use the <samp class="ph codeph">functionParams</samp> member
+                              to access the parameters to <samp class="ph codeph">cudaMemcpy</samp>. To access the parameters, we
+                              first cast <samp class="ph codeph">functionParams</samp> to a structure type corresponding to the
+                              <samp class="ph codeph">cudaMemcpy</samp> function. These parameter structures are contained in
+                              <samp class="ph codeph">generated_cuda_runtime_api_meta.h</samp>,
+                              <samp class="ph codeph">generated_cuda_meta.h</samp> and a number of other files. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="resource-callbacks"><a name="resource-callbacks" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#resource-callbacks" name="resource-callbacks" shape="rect">2.2.2.&nbsp;Resource Callbacks</a></h3>
+                        <div class="body conbody">
+                           <div class="p">Using the Callback API with the <samp class="ph codeph">SANITIZER_CB_DOMAIN_RESOURCE</samp> domain, a
+                              callback function can be associated with some CUDA resource creation and destruction
+                              events. For example, when a CUDA context is created, the callback function is invoked
+                              with a callback ID equal to <samp class="ph codeph">SANITIZER_CBID_RESOURCE_CONTEXT_CREATED</samp>.
+                              For this domain, the <samp class="ph codeph">cbdata</samp> argument is one of the following types: 
+                              <ul class="ul">
+                                 <li class="li"><samp class="ph codeph">Sanitizer_ResourceContextData</samp> for CUDA context creation and
+                                    destruction
+                                 </li>
+                                 <li class="li"><samp class="ph codeph">Sanitizer_ResourceStreamData</samp> for CUDA stream creation and
+                                    destruction
+                                 </li>
+                                 <li class="li"><samp class="ph codeph">Sanitizer_ResourceModuleData</samp> for CUDA module load and
+                                    unload
+                                 </li>
+                                 <li class="li"><samp class="ph codeph">Sanitizer_ResourceMemoryData</samp> for CUDA memory allocation and
+                                    de-allocation
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="synchronization-callbacks"><a name="synchronization-callbacks" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#synchronization-callbacks" name="synchronization-callbacks" shape="rect">2.2.3.&nbsp;Synchronization Callbacks</a></h3>
+                        <div class="body conbody">
+                           <p class="p">Using the Callback API with the <samp class="ph codeph">SANITIZER_CB_DOMAIN_SYNCHRONIZE</samp> domain,
+                              a callback function can be associated with CUDA context and stream synchronizations. For
+                              example, when a CUDA context is synchronized, the callback function is invoked with a
+                              callback ID equal to <samp class="ph codeph">SANITIZER_CBID_SYNCHRONIZE_CONTEXT_SYNCHRONIZED</samp>.
+                              For this domain, the <samp class="ph codeph">cbdata</samp> argument is of the type
+                              <samp class="ph codeph">Sanitizer_SynchronizeData</samp>. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="launch-callbacks"><a name="launch-callbacks" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#launch-callbacks" name="launch-callbacks" shape="rect">2.2.4.&nbsp;Launch Callbacks</a></h3>
+                        <div class="body conbody">
+                           <p class="p">Using the Callback API with the <samp class="ph codeph">SANITIZER_CB_DOMAIN_LAUNCH</samp> domain, a
+                              callback function can be associated with CUDA kernel launches. For example, when a CUDA
+                              kernel launch has started, the callback function is invoked with a callback ID equal to
+                              <samp class="ph codeph">SANITIZER_CBID_LAUNCH_BEGIN</samp>. For this domain, the
+                              <samp class="ph codeph">cbdata</samp> argument is of the type
+                              <samp class="ph codeph">Sanitizer_LaunchData</samp>. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="memcpy-callbacks"><a name="memcpy-callbacks" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#memcpy-callbacks" name="memcpy-callbacks" shape="rect">2.2.5.&nbsp;Memcpy Callbacks</a></h3>
+                        <div class="body conbody">
+                           <p class="p">Using the Callback API with the <samp class="ph codeph">SANITIZER_CB_DOMAIN_MEMCPY</samp> domain, a
+                              callback function can be associated with CUDA memcpy operations. For example, when a
+                              <samp class="ph codeph">cudaMemcpy</samp> API function is called, the callback function is invoked
+                              with a callback ID equal to <samp class="ph codeph">SANITIZER_CBID_MEMCPY_STARTING</samp>. For this
+                              domain, the <samp class="ph codeph">cbdata</samp> argument is of the type
+                              <samp class="ph codeph">Sanitizer_MemcpyData</samp>. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="memset-callbacks"><a name="memset-callbacks" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#memset-callbacks" name="memset-callbacks" shape="rect">2.2.6.&nbsp;Memset Callbacks</a></h3>
+                        <div class="body conbody">
+                           <p class="p">Using the Callback API with the <samp class="ph codeph">SANITIZER_CB_DOMAIN_MEMSET</samp> domain, a
+                              callback function can be associated with CUDA memset operations. For example, when a
+                              <samp class="ph codeph">cudaMemset</samp> API function is called, the callback function is invoked
+                              with a callback ID equal to <samp class="ph codeph">SANITIZER_CBID_MEMSET_STARTING</samp>. For this
+                              domain, the <samp class="ph codeph">cbdata</samp> argument is of the type
+                              <samp class="ph codeph">Sanitizer_MemsetData</samp>. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="batch-memop-callbacks"><a name="batch-memop-callbacks" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#batch-memop-callbacks" name="batch-memop-callbacks" shape="rect">2.2.7.&nbsp;Batch Memory Operations Callbacks</a></h3>
+                        <div class="body conbody">
+                           <p class="p">
+                              Using the Callback API with the <samp class="ph codeph">SANITIZER_CB_DOMAIN_BATCH_MEMOP</samp> domain, a callback function
+                              can be associated with CUDA batch memory operations. For example, when a <samp class="ph codeph">cuStreamWriteValue</samp> API
+                              function is called, the callback function is invoked with a callback ID equal to
+                              <samp class="ph codeph">SANITIZER_CBID_BATCH_MEMOP_WRITE</samp>. For this domain, the <samp class="ph codeph">cbdata</samp> argument
+                              is of the type <samp class="ph codeph">Sanitizer_BatchMemopData</samp>.
+                              
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="patching-api"><a name="patching-api" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#patching-api" name="patching-api" shape="rect">2.3.&nbsp;Patching API</a></h3>
+                     <div class="body conbody">
+                        <p class="p">The Compute Sanitizer Patching API allows you to load patch functions and insert them
+                           into user code. Patch functions will be invoked when the application's CUDA code
+                           executes certain instructions or calls certain CUDA device functions. The following
+                           terminology is used by the Patching API: 
+                        </p>
+                        <ul class="ul">
+                           <li class="li"><strong class="ph b">Instruction ID</strong>: Each patchable event is given a unique ID than can be passed
+                              to patching API functions to specify that these events should be patched.
+                              Instruction IDs are defined by <samp class="ph codeph">Sanitizer_InstructionId</samp>.
+                           </li>
+                           <li class="li"><strong class="ph b">Instrumentation point</strong>: A location in the original CUDA code that is being
+                              instrumented by the Compute Sanitizer API. Upon execution, the user code path is
+                              modified so that a patch gets executed either before or after the patched event. All
+                              patches are executed prior to the event, with the exception of device-side malloc. 
+                           </li>
+                           <li class="li"><strong class="ph b">Patch</strong>: A CUDA <samp class="ph codeph">__device__</samp> function that the Compute Sanitizer
+                              will insert into another existing CUDA code. Patch function signatures must match
+                              the one expected by the API (see below for the expected signature types). 
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="topic concept nested2" id="write-patch"><a name="write-patch" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#write-patch" name="write-patch" shape="rect">2.3.1.&nbsp;Writing a Patch</a></h3>
+                        <div class="body conbody">
+                           <p class="p">The patch must follow the function signature required by the Compute Sanitizer API for a
+                              given instruction ID. The mapping of instruction ID to function signature is documented
+                              in the comments of <samp class="ph codeph">Sanitizer_InstructionId</samp> in
+                              <samp class="ph codeph">sanitizer_patching.h</samp>. For instance, if we wish to patch a memory
+                              access using the instruction ID <samp class="ph codeph">SANITIZER_INSTRUCTION_MEMORY_ACCESS</samp>, we
+                              need to use the <samp class="ph codeph">SanitizerCallbackMemoryAccess</samp> type. 
+                           </p><pre xml:space="preserve">
+extern "C" __device__
+SanitizerPatchResult SANITIZERAPI my_memory_access_callback(
+    void* userdata,
+    uint64_t pc,
+    void* ptr,
+    uint32_t accessSize,
+    uint32_t flags)
+{
+    MyDeviceDataStruct *my_data = (MyDeviceDataStruct *)userdata
+
+    if ((flags &amp; SANITIZER_MEMORY_DEVICE_FLAG_WRITE) != 0)
+        // log write
+    else
+        // log read
+
+    return SANITIZER_PATCH_SUCCESS;
+}
+        </pre><p class="p">In this patch, we log write and read accesses to a structure we allocated previously.
+                              <samp class="ph codeph">extern "C"</samp> ensures that the patch name will not be mangled,
+                              allowing us to use its name as a string directly in calls to
+                              <samp class="ph codeph">sanitizerPatchInstructions</samp> (see <a class="xref" href="index.html#insert-patch" shape="rect">below</a>). 
+                           </p>
+                           <p class="p">There can be multiple patches defined in a single CUDA file. This file must then be
+                              compiled using the following nvcc options: 
+                           </p><pre xml:space="preserve">
+$ nvcc --cubin --compile-as-tools-patch MySanitizerPatches.cu -o MySanitizerPatches.cubin
+        </pre><p class="p">The <samp class="ph codeph">--cubin</samp> option can be replaced by <samp class="ph codeph">--fatbin</samp> if a
+                              fatbin is preferred over a cubin as the output file. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="insert-patch"><a name="insert-patch" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#insert-patch" name="insert-patch" shape="rect">2.3.2.&nbsp;Insert a Patch</a></h3>
+                        <div class="body conbody">
+                           <p class="p">Once the patch has been generated, it can be inserted into user code by using the
+                              following procedure: 
+                           </p>
+                           <ol class="ol">
+                              <li class="li"><strong class="ph b">Load the patch</strong>. There are two APIs used to load the patch:
+                                 <samp class="ph codeph">sanitizerAddPatchesFromFile</samp> and
+                                 <samp class="ph codeph">sanitizerAddPatches</samp>. They use the same input format as
+                                 <samp class="ph codeph">cuModuleLoad</samp> and <samp class="ph codeph">cuModuleLoadData</samp>,
+                                 respectively. 
+                              </li>
+                              <li class="li"><strong class="ph b">Select which instructions to patch</strong> by using the
+                                 <samp class="ph codeph">sanitizerPatchInstructions</samp> API. 
+                              </li>
+                              <li class="li"><strong class="ph b">Patch user code</strong> by using the <samp class="ph codeph">sanitizerPatchModule</samp> API.
+                                 
+                              </li>
+                              <li class="li">
+                                 Optionally, <strong class="ph b">set the callback data for patches</strong> by using the <samp class="ph codeph">sanitizerSetCallbackData</samp> API.
+                                 
+                              </li>
+                           </ol>
+                           <p class="p">
+                              The following code shows a typical sequence using these APIs. For simplicity, error checking was removed.
+                              
+                           </p><pre xml:space="preserve">
+CUcontext ctx = ... // current CUDA context
+sanitizerAddPatchesFromFile("MySanitizerPatches.cubin", ctx);
+
+CUmodule module = ... // module containing the user code
+sanitizerPatchInstructions(SANITIZER_INSTRUCTION_MEMORY_ACCESS, module, "my_memory_access_callback");
+
+sanitizerPatchModule(module);
+
+MyDeviceDataTracker *deviceDataTracker;
+cudaMalloc(&amp;deviceDataTracker, sizeof(*deviceDataTracker));
+
+CUfunction function = ... // kernel to be launched for which we want to set the callbackdata for the patches
+sanitizerSetCallbackData(function, deviceDataTracker);
+        </pre><p class="p">
+                              All subsequent launches using code from this CUDA module will be instrumented and
+                              <samp class="ph codeph">my_memory_access_callback</samp> will be invoked before every memory
+                              access. However, the callback data is only set for all subsequent launches of the given kernel.
+                              An easy way to have a kernel <samp class="ph codeph">CUfunction</samp>, is through the Sanitizer launch callbacks.
+                              Instrumentation can be removed by using the <samp class="ph codeph">sanitizerUnpatchModule</samp> API.
+                              
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="memory-api"><a name="memory-api" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#memory-api" name="memory-api" shape="rect">2.4.&nbsp;Memory API</a></h3>
+                     <div class="body conbody">
+                        <p class="p">The Compute Sanitizer Memory API provides replacement functions for the CUDA Memory API
+                           that can be safely called from within Compute Sanitizer <a class="xref" href="index.html#callback-api" shape="rect">callbacks</a>. 
+                        </p>
+                        <ul class="ul">
+                           <li class="li"><samp class="ph codeph">sanitizerAlloc</samp> is a replacement for
+                              <samp class="ph codeph">cudaMalloc</samp>.
+                           </li>
+                           <li class="li"><samp class="ph codeph">sanitizerFree</samp> is a replacement for <samp class="ph codeph">cudaFree</samp>.
+                           </li>
+                           <li class="li"><samp class="ph codeph">sanitizerMemcpyHostToDeviceAsync</samp> is a replacement for
+                              <samp class="ph codeph">cudaMemcpyAsync</samp> for host-to-device copies.
+                           </li>
+                           <li class="li"><samp class="ph codeph">sanitizerMemcpyDeviceToHost</samp> is a replacement for
+                              <samp class="ph codeph">cudaMemcpy</samp> for device-to-host copies.
+                           </li>
+                           <li class="li"><samp class="ph codeph">sanitizerMemset</samp> is a replacement for
+                              <samp class="ph codeph">cudaMemset</samp>.
+                           </li>
+                        </ul>
+                        <p class="p">These functions can also be called in normal user code, where they can be mixed with the
+                           CUDA API. For instance, memory allocated with <samp class="ph codeph">sanitizerAlloc</samp> can be
+                           freed with <samp class="ph codeph">cudaFree</samp>. However, since only CUDA API calls will cause
+                           <a class="xref" href="index.html#callback-api" shape="rect">callbacks</a> to be invoked, this can lead to an
+                           incoherent tracking state and should be avoided. 
+                        </p>
+                        <p class="p"> When called from a launch domain callback, <samp class="ph codeph">sanitizerMemcpyDeviceToHost</samp>
+                           may only be used with host pinned memory as destination. 
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="limitations"><a name="limitations" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#limitations" name="limitations" shape="rect">3.&nbsp;Limitations</a></h2>
+                  <div class="body conbody">
+                     <p class="p">
+                        No known issues at this time.
+                        
+                     </p>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="notices-header"><a name="notices-header" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#notices-header" name="notices-header" shape="rect">Notices</a></h2>
+                  <div class="topic reference nested1" id="notice"><a name="notice" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#notice" name="notice" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Notice</h3>
+                           <p class="p">ALL NVIDIA DESIGN SPECIFICATIONS, REFERENCE BOARDS, FILES, DRAWINGS, DIAGNOSTICS, LISTS, AND OTHER DOCUMENTS (TOGETHER AND
+                              SEPARATELY, "MATERIALS") ARE BEING PROVIDED "AS IS." NVIDIA MAKES NO WARRANTIES, EXPRESSED, IMPLIED, STATUTORY, OR OTHERWISE
+                              WITH RESPECT TO THE MATERIALS, AND EXPRESSLY DISCLAIMS ALL IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTABILITY, AND FITNESS
+                              FOR A PARTICULAR PURPOSE. 
+                           </p>
+                           <p class="p">Information furnished is believed to be accurate and reliable. However, NVIDIA Corporation assumes no responsibility for the
+                              consequences of use of such information or for any infringement of patents or other rights of third parties that may result
+                              from its use. No license is granted by implication of otherwise under any patent rights of NVIDIA Corporation. Specifications
+                              mentioned in this publication are subject to change without notice. This publication supersedes and replaces all other information
+                              previously supplied. NVIDIA Corporation products are not authorized as critical components in life support devices or systems
+                              without express written approval of NVIDIA Corporation.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="trademarks"><a name="trademarks" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#trademarks" name="trademarks" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Trademarks</h3>
+                           <p class="p">NVIDIA and the NVIDIA logo are trademarks or registered trademarks of NVIDIA Corporation
+                              in the U.S. and other countries.  Other company and product names may be trademarks of
+                              the respective companies with which they are associated.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="copyright-past-to-present"><a name="copyright-past-to-present" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#copyright-past-to-present" name="copyright-past-to-present" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Copyright</h3>
+                           <p class="p">© <span class="ph">2019</span>-<span class="ph">2022</span> NVIDIA
+                              Corporation and affiliates. All rights reserved.
+                           </p>
+                           <p class="p">This product includes software developed by the Syncro Soft SRL (http://www.sync.ro/).</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>

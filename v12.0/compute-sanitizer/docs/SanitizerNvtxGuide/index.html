@@ -1,0 +1,710 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="concept"></meta>
+      <meta name="DC.Title" content="NVTX API for Compute Sanitizer Reference Manual"></meta>
+      <meta name="abstract" content="The reference manual on NVTX API for Compute Sanitizer."></meta>
+      <meta name="description" content="The reference manual on NVTX API for Compute Sanitizer."></meta>
+      <meta name="DC.Coverage" content="Developer Interfaces"></meta>
+      <meta name="DC.subject" content="Sanitizer NVTX API Guide"></meta>
+      <meta name="keywords" content="Sanitizer NVTX API Guide"></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="abstract"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>NVTX API for Compute Sanitizer Reference Manual :: Compute Sanitizer Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      --&gt;
+      
+      <script src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="https://docs.nvidia.com/compute-sanitizer/SanitizerNvtxGuide/index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">Compute Sanitizer Documentation</span><form id="search" method="get" action="search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="../index.html" title="The root of the site.">Compute Sanitizer
+                  v2022.4.0</a></div>
+            <div class="category"><a href="index.html" title="NVTX API for Compute Sanitizer Reference Manual">NVTX API for Compute Sanitizer Reference Manual</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="#introduction">1.&nbsp;Introduction</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="#about-nvtx">1.1.&nbsp;Overview</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="#usage">2.&nbsp;Usage</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="#compatibility-and-requirements">2.1.&nbsp;Compatibility and Requirements</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#nvtx-domain">2.2.&nbsp;NVTX Domain</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#suballocation-api">2.3.&nbsp;Suballocation API</a></div>
+                        <ul>
+                           <li>
+                              <div class="section-link"><a href="#pools-management">2.3.1.&nbsp;Pools Management</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#suballocations-management">2.3.2.&nbsp;Suballocations Management</a></div>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#naming-api">2.4.&nbsp;Naming API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#permissions-api">2.5.&nbsp;Permissions API</a></div>
+                        <ul>
+                           <li>
+                              <div class="section-link"><a href="#permissions-basic">2.5.1.&nbsp;Basic Permissions Management</a></div>
+                           </li>
+                           <li>
+                              <div class="section-link"><a href="#permissions-advanced">2.5.2.&nbsp;Advanced Permissions Management</a></div>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="#limitations">3.&nbsp;Limitations</a></div>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="release-info">NVTX API for Compute Sanitizer Reference Manual
+                  (<a href="../pdf/SanitizerNvtxGuide.pdf">PDF</a>)
+                  
+                  -
+                  
+                  v2022.4.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated July 5, 2022
+                  -
+                  <a href="mailto:devtools@nvidia.com?subject=Compute Sanitizer Documentation Feedback: NVTX API for Compute Sanitizer Reference Manual">Send Feedback</a></div>
+            </div>
+            <article id="contents">
+               <div class="topic nested0" id="abstract"><a name="abstract" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#abstract" name="abstract" shape="rect">NVTX API for Compute Sanitizer Reference Manual</a></h2>
+                  <div class="body conbody">
+                     <p class="shortdesc">The reference manual on NVTX API for Compute Sanitizer.</p>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="introduction"><a name="introduction" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#introduction" name="introduction" shape="rect">1.&nbsp;Introduction</a></h2>
+                  <div class="body conbody"></div>
+                  <div class="topic concept nested1" id="about-nvtx"><a name="about-nvtx" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#about-nvtx" name="about-nvtx" shape="rect">1.1.&nbsp;Overview</a></h3>
+                     <div class="body conbody">
+                        <p class="p">
+                           The NVTX Memory API for Compute Sanitizer allows CUDA programs to
+                           notify Compute Sanitizer about memory restrictions: memory pools
+                           management or permissions restrictions, in addition to memory
+                           labeling. The tools are notified through NVTX (NVIDIA Tools
+                           Extension), a header-only C library used by various NVIDIA tools.
+                           Latest NVTX headers can be downloaded
+                           <a class="xref" href="https://github.com/NVIDIA/NVTX/tree/dev-mem-api" target="_blank" shape="rect">on our GitHub repository (experimental branch)</a>.
+                           
+                        </p>
+                        <div class="p">
+                           This API has the following main goals:
+                           
+                           <ul class="ul">
+                              <li class="li">
+                                 Programs can mark allocations as memory pools, allowing
+                                 Compute Sanitizer to be aware of which parts of this
+                                 specific allocation are actually used. When using the
+                                 Memcheck tool, you are notified if unregistered parts of
+                                 the pool are accessed by the program, errors that could
+                                 have been missed otherwise. When using the Initcheck tool,
+                                 in combination with option
+                                 <samp class="ph codeph">--track-unused-memory yes</samp>, you are not
+                                 notified for unused memory in non-registered regions,
+                                 therefore avoiding false positives.
+                                 
+                              </li>
+                              <li class="li">
+                                 Programs can label allocations with meaningful names,
+                                 allowing you to identify an allocation associated to a
+                                 specific error by its name (e.g., allocation that is
+                                 leaking, or unused).
+                                 
+                              </li>
+                              <li class="li">
+                                 Programs can restrict some allocations to a specific set of
+                                 permissions (e.g., read-only or write-only) applicable for a
+                                 specific scope (e.g., CUDA stream, device or whole program).
+                                 When using the Memcheck tool, violation of these
+                                 restrictions will result in an error.
+                                 
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="usage"><a name="usage" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#usage" name="usage" shape="rect">2.&nbsp;Usage</a></h2>
+                  <div class="body conbody"></div>
+                  <div class="topic concept nested1" id="compatibility-and-requirements"><a name="compatibility-and-requirements" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#compatibility-and-requirements" name="compatibility-and-requirements" shape="rect">2.1.&nbsp;Compatibility and Requirements</a></h3>
+                     <div class="body conbody">
+                        <p class="p">
+                           The Compute Sanitizer tools require CUDA 11.0 or newer.
+                           
+                        </p>
+                        <p class="p">
+                           The NVTX Memory API is supported by Compute Sanitizer starting
+                           CUDA 11.3, using the <samp class="ph codeph">--nvtx yes</samp> option. Starting
+                           CUDA 12.0, this option is enabled by default.
+                           
+                        </p>
+                        <div class="p">
+                           Compute Sanitizer requires the CUDA runtime to be initialized
+                           before calling NVTX.
+                           <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// NVTX calls are not allowed before CUDA runtime initialization.</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Forces CUDA runtime initialization.</span>
+cudaFree(0);
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// NVTX calls are now allowed.</span>
+</pre></div>
+                        <p class="p">
+                           NVTX structures must be zero-initialized. Examples on this page use
+                           C++ empty initializer (<samp class="ph codeph">{}</samp>). If you are using C,
+                           you can use <samp class="ph codeph">memset</samp> or use the intializer syntax
+                           with at least one field (C does not support empty initalizers).
+                           
+                        </p>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="nvtx-domain"><a name="nvtx-domain" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#nvtx-domain" name="nvtx-domain" shape="rect">2.2.&nbsp;NVTX Domain</a></h3>
+                     <div class="body conbody">
+                        <div class="p">
+                           All NVTX calls requires you to create a NVTX domain. This can be
+                           achieved using <samp class="ph codeph">nvtxDomainCreateA</samp>.
+                           <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExt.h&gt;</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">auto</span> nvtxDomain = nvtxDomainCreateA(<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-string">"my-domain"</span>);
+</pre></div>
+                        <p class="p">
+                           For now, NVTX domains have no specific usage, but will have one in
+                           a future Compute Sanitizer version.
+                           
+                        </p>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="suballocation-api"><a name="suballocation-api" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#suballocation-api" name="suballocation-api" shape="rect">2.3.&nbsp;Suballocation API</a></h3>
+                     <div class="body conbody"></div>
+                     <div class="topic concept nested2" id="pools-management"><a name="pools-management" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#pools-management" name="pools-management" shape="rect">2.3.1.&nbsp;Pools Management</a></h3>
+                        <div class="body conbody">
+                           <div class="p">
+                              Any allocation created with <samp class="ph codeph">cudaMalloc</samp> can be
+                              registered as a memory pool using
+                              <samp class="ph codeph">nvtxMemHeapRegister</samp>.  The following code example
+                              allocates 64 bytes and registers the allocation as a memory pool.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// (see https://github.com/NVIDIA/NVTX/tree/dev-mem-api/c/include)</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">void</span> *ptr;
+cudaMalloc(&amp;ptr, 64);
+
+nvtxMemVirtualRangeDesc_t nvtxRangeDesc = {};
+nvtxRangeDesc.size = 64;
+nvtxRangeDesc.ptr = ptr;
+
+nvtxMemHeapDesc_t nvtxHeapDesc = {};
+nvtxHeapDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxHeapDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemHeapDesc_t);
+nvtxHeapDesc.usage = NVTX_MEM_HEAP_USAGE_TYPE_SUB_ALLOCATOR;
+nvtxHeapDesc.type = NVTX_MEM_TYPE_VIRTUAL_ADDRESS;
+nvtxHeapDesc.typeSpecificDescSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemVirtualRangeDesc_t);
+nvtxHeapDesc.typeSpecificDesc = &amp;nvtxRangeDesc;
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">auto</span> nvtxPool = nvtxMemHeapRegister(
+    nvtxDomain,
+    &amp;nvtxHeapDesc);
+</pre>
+                              Please note that Compute Sanitizer only supports
+                              <samp class="ph codeph">nvtxMemHeapRegister</samp> with parameters
+                              <samp class="ph codeph">usage = NVTX_MEM_HEAP_USAGE_TYPE_SUB_ALLOCATOR</samp> and
+                              <samp class="ph codeph">type = NVTX_MEM_TYPE_VIRTUAL_ADDRESS</samp>.
+                              If you are using the CUDA runtime API,
+                              <samp class="ph codeph">nvtxMemHeapRegister</samp> can be used with allocations
+                              created with <samp class="ph codeph">cuMemAlloc</samp>.
+                              
+                           </div>
+                           <div class="p">
+                              An existing pool can be reset to its initial state using
+                              <samp class="ph codeph">nvtxMemHeapReset</samp>. The following example resets the
+                              pool previously allocated.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+
+nvtxMemHeapReset(nvtxDomain, nvtxPool);
+</pre></div>
+                           <div class="p">
+                              In a similar fashion, a pool can be unregistered using
+                              <samp class="ph codeph">nvtxMemHeapUnregister</samp>. An allocation cannot be
+                              used after it is unregistered, but the allocation must be freed
+                              using <samp class="ph codeph">cudaFree</samp> to dispose of it.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+
+nvtxMemHeapUnregister(nvtxDomain, nvtxPool);
+</pre>
+                              For your convenience, calling <samp class="ph codeph">cudaFree</samp> on a memory
+                              pool causes Compute Sanitizer to automatically unregister it.
+                              
+                           </div>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="suballocations-management"><a name="suballocations-management" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#suballocations-management" name="suballocations-management" shape="rect">2.3.2.&nbsp;Suballocations Management</a></h3>
+                        <div class="body conbody">
+                           <div class="p">
+                              Once a pool is created, users can create suballocations within this
+                              pool using <samp class="ph codeph">nvtxMemRegionsRegister</samp>. For your
+                              convenience, you can register multiple regions at the same time.
+                              The following example creates a suballocation of 16 bytes at
+                              address <samp class="ph codeph">ptr</samp>. Both <samp class="ph codeph">ptr</samp> and
+                              <samp class="ph codeph">ptr + 16 bytes</samp> must be part of the pool.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+
+nvtxMemVirtualRangeDesc_t nvtxRangeDesc = {};
+nvtxRangeDesc.size = 16;
+nvtxRangeDesc.ptr = ptr;
+
+nvtxMemRegionsRegisterBatch_t nvtxRegionsDesc = {};
+nvtxRegionsDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxRegionsDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemRegionsRegisterBatch_t);
+nvtxRegionsDesc.regionType = NVTX_MEM_TYPE_VIRTUAL_ADDRESS;
+nvtxRegionsDesc.heap = nvtxPool;
+nvtxRegionsDesc.regionCount = 1;
+nvtxRegionsDesc.regionDescElementSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemVirtualRangeDesc_t);
+nvtxRegionsDesc.regionDescElements = &amp;nvtxRangeDesc;
+
+nvtxMemRegionsRegister(nvtxDomain, &amp;nvtxRegionsDesc);
+</pre>
+                              For your convenience, Initcheck assumes that a new
+                              suballocation is uninitialized, meaning failure to initialize it
+                              might result in error reports. Please note that Compute Sanitizer
+                              only supports <samp class="ph codeph">nvtxMemRegionsRegister</samp> with parameter
+                              <samp class="ph codeph">regionType = NVTX_MEM_TYPE_VIRTUAL_ADDRESS</samp>.
+                              Suballocations are considered as regular allocations for NVTX
+                              <a class="xref" href="index.html#naming-api" shape="rect">naming</a> and
+                              <a class="xref" href="index.html#permissions-api" shape="rect">permissions</a> API, therefore
+                              it is possible to label them or change their permissions.
+                              
+                           </div>
+                           <div class="p">
+                              Existing suballocations can be resized using
+                              <samp class="ph codeph">nvtxMemRegionsResize</samp>. The following example
+                              resizes our previous suballocation at address <samp class="ph codeph">ptr</samp>
+                              from 16 bytes to 32.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+
+nvtxMemVirtualRangeDesc_t nvtxRangeDesc = {};
+nvtxRangeDesc.size = 32;
+nvtxRangeDesc.ptr = ptr;
+
+nvtxMemRegionsResizeBatch_t nvtxRegionsDesc = {};
+nvtxRegionsDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxRegionsDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemRegionsResizeBatch_t);
+nvtxRegionsDesc.regionType = NVTX_MEM_TYPE_VIRTUAL_ADDRESS;
+nvtxRegionsDesc.regionDescCount = 1;
+nvtxRegionsDesc.regionDescElementSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemVirtualRangeDesc_t);
+nvtxRegionsDesc.regionDescElements = &amp;nvtxRangeDesc;
+
+nvtxMemRegionsResize(nvtxDomain, &amp;nvtxRegionsDesc);
+</pre></div>
+                           <div class="p">
+                              In a similar fashion, existing allocations can be removed using
+                              <samp class="ph codeph">nvtxMemRegionsUnregister</samp>. The following example
+                              removes our previous suballocation at address <samp class="ph codeph">ptr</samp>.
+                              <pre xml:space="preserve">
+nvtxMemRegionRef_t nvtxRegionRef;
+nvtxRegionRef.pointer = ptr;
+
+nvtxMemRegionsUnregisterBatch_t nvtxRegionsDesc = {};
+nvtxRegionsDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxRegionsDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemRegionsUnregisterBatch_t);
+nvtxRegionsDesc.refType = NVTX_MEM_REGION_REF_TYPE_POINTER;
+nvtxRegionsDesc.refCount = 1;
+nvtxRegionsDesc.refElementSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemRegionRef_t);
+nvtxRegionsDesc.refElements = &amp;nvtxRegionRef;
+
+nvtxMemRegionsUnregister(nvtxDomain, &amp;nvtxRegionsDesc);
+</pre>
+                              Omitting to unregister a suballocation is reported as a memory
+                              leak if Compute Sanitizer is used in combination with option
+                              <samp class="ph codeph">--leak-check yes</samp>.
+                              
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="naming-api"><a name="naming-api" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#naming-api" name="naming-api" shape="rect">2.4.&nbsp;Naming API</a></h3>
+                     <div class="body conbody">
+                        <div class="p">
+                           Any allocation can be assigned a name, so future Compute Sanitizer
+                           error reports can refer to an allocation by its name. This example
+                           names the allocation at address <samp class="ph codeph">ptr</samp>:
+                           "My Allocation".
+                           <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+
+nvtxMemRegionNameDesc_t nvtxLabelDesc;
+nvtxLabelDesc.regionRefType = NVTX_MEM_REGION_REF_TYPE_POINTER;
+nvtxLabelDesc.nameType = NVTX_MESSAGE_TYPE_ASCII;
+nvtxLabelDesc.region.pointer = ptr;
+nvtxLabelDesc.name.ascii = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-string">"My Allocation"</span>;
+
+nvtxMemRegionsNameBatch_t nvtxRegionsDesc = {};
+nvtxRegionsDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxRegionsDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemRegionsNameBatch_t);
+nvtxRegionsDesc.regionCount = 1;
+nvtxRegionsDesc.regionElementSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemRegionNameDesc_t);
+nvtxRegionsDesc.regionElements = &amp;nvtxLabelDesc;
+
+nvtxMemRegionsName(nvtxDomain, &amp;nvtxRegionsDesc);
+</pre>
+                           Please note that Compute Sanitizer only supports
+                           <samp class="ph codeph">nvtxMemRegionsName</samp> with parameter
+                           <samp class="ph codeph">nameType = NVTX_MESSAGE_TYPE_ASCII</samp> for all region
+                           elements in <samp class="ph codeph">regionElements</samp>.
+                           As of now, only leak and unused memory reporting features
+                           allocation names.
+                           
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="permissions-api"><a name="permissions-api" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#permissions-api" name="permissions-api" shape="rect">2.5.&nbsp;Permissions API</a></h3>
+                     <div class="body conbody"></div>
+                     <div class="topic concept nested2" id="permissions-basic"><a name="permissions-basic" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#permissions-basic" name="permissions-basic" shape="rect">2.5.1.&nbsp;Basic Permissions Management</a></h3>
+                        <div class="body conbody">
+                           <div class="p">
+                              NVTX Permissions API allows any allocation permissions to be
+                              restricted using <samp class="ph codeph">nvtxMemPermissionsAssign</samp>. For
+                              this example, we use the global program scope (by calling
+                              <samp class="ph codeph">nvtxMemCudaGetProcessWidePermissions</samp>), meaning
+                              permissions are applied on all kernel launches. This example
+                              restricts the allocation at address <samp class="ph codeph">ptr</samp> to
+                              read-only permissions.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt; and &lt;nvtx3/nvToolsExtMemCudaRt.h&gt;</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">auto</span> processPermHandle = nvtxMemCudaGetProcessWidePermissions(nvtxDomain);
+
+nvtxMemPermissionsAssignRegionDesc_t nvtxPermDesc;
+nvtxPermDesc.flags = NVTX_MEM_PERMISSIONS_REGION_FLAGS_READ;
+nvtxPermDesc.regionRefType = NVTX_MEM_REGION_REF_TYPE_POINTER;
+nvtxPermDesc.region.pointer = ptr;
+
+nvtxMemPermissionsAssignBatch_t nvtxRegionsDesc = {};
+nvtxRegionsDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxRegionsDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemPermissionsAssignBatch_t);
+nvtxRegionsDesc.permissions = processPermHandle;
+nvtxRegionsDesc.regionCount = 1;
+nvtxRegionsDesc.regionElementSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemPermissionsAssignRegionDesc_t);
+nvtxRegionsDesc.regionElements = &amp;nvtxPermDesc;
+
+nvtxMemPermissionsAssign(nvtxDomain, &amp;nvtxRegionsDesc);
+</pre>
+                              Valid permissions are:
+                              <ul class="ul">
+                                 <li class="li">Read: <samp class="ph codeph">NVTX_MEM_PERMISSIONS_REGION_FLAGS_READ</samp></li>
+                                 <li class="li">Write: <samp class="ph codeph">NVTX_MEM_PERMISSIONS_REGION_FLAGS_WRITE</samp></li>
+                                 <li class="li">Atomic: <samp class="ph codeph">NVTX_MEM_PERMISSIONS_REGION_FLAGS_ATOMIC</samp></li>
+                                 <li class="li">A combination of read, write and atomic (using XORs).</li>
+                                 <li class="li">Reset: <samp class="ph codeph">NVTX_MEM_PERMISSIONS_REGION_FLAGS_RESET</samp></li>
+                              </ul>
+                              
+                              
+                              Using special permission
+                              <samp class="ph codeph">NVTX_MEM_PERMISSIONS_REGION_FLAGS_RESET</samp> resets
+                              assigned permissions for the specified allocation on the specified
+                              scope.
+                              
+                           </div>
+                           <div class="p">
+                              Allocations permissions can be restricted on a per-device basis,
+                              using <samp class="ph codeph">nvtxMemCudaGetDeviceWidePermissions</samp>. The
+                              following example gets the permissions handle from device
+                              <samp class="ph codeph">device</samp>, a handle that is used with
+                              <samp class="ph codeph">nvtxMemPermissionsAssign</samp> to change permissions
+                              for the allocation at address <samp class="ph codeph">ptr</samp>, previously
+                              restricted to read-only on the global scope, and now read-write for
+                              kernel launched on <samp class="ph codeph">device</samp> (no atomic allowed).
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt; and &lt;nvtx3/nvToolsExtMemCudaRt.h&gt;</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">auto</span> devicePermHandle = nvtxMemCudaGetDeviceWidePermissions(nvtxDomain, device);
+
+nvtxMemPermissionsAssignRegionDesc_t nvtxPermDesc;
+nvtxPermDesc.flags = NVTX_MEM_PERMISSIONS_REGION_FLAGS_READ | NVTX_MEM_PERMISSIONS_REGION_FLAGS_WRITE;
+nvtxPermDesc.regionRefType = NVTX_MEM_REGION_REF_TYPE_POINTER;
+nvtxPermDesc.region.pointer = ptr;
+
+nvtxMemPermissionsAssignBatch_t nvtxRegionsDesc = {};
+nvtxRegionsDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxRegionsDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemPermissionsAssignBatch_t);
+nvtxRegionsDesc.permissions = devicePermHandle;
+nvtxRegionsDesc.regionCount = 1;
+nvtxRegionsDesc.regionElementSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemPermissionsAssignRegionDesc_t);
+nvtxRegionsDesc.regionElements = &amp;nvtxPermDesc;
+
+nvtxMemPermissionsAssign(nvtxDomain, &amp;nvtxRegionsDesc);
+</pre></div>
+                        </div>
+                     </div>
+                     <div class="topic concept nested2" id="permissions-advanced"><a name="permissions-advanced" shape="rect">
+                           <!-- --></a><h3 class="title topictitle2"><a href="#permissions-advanced" name="permissions-advanced" shape="rect">2.5.2.&nbsp;Advanced Permissions Management</a></h3>
+                        <div class="body conbody">
+                           <div class="p">
+                              Permissions can be assigned to a specific stream scope thanks to
+                              custom permissions objects. You can create one using
+                              <samp class="ph codeph">nvtxMemPermissionsCreate</samp>, and bind it to a scope
+                              using <samp class="ph codeph">nvtxMemPermissionsBind</samp>. The following
+                              example restricts the allocation at address <samp class="ph codeph">ptr</samp> to
+                              read-only permissions.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt; and &lt;nvtx3/nvToolsExtMemCudaRt.h&gt;</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Create new permissions object.</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">auto</span> permHandle = nvtxMemPermissionsCreate(nvtxDomain, NVTX_MEM_PERMISSIONS_CREATE_FLAGS_NONE);
+
+nvtxMemPermissionsAssignRegionDesc_t nvtxPermDesc;
+nvtxPermDesc.flags = NVTX_MEM_PERMISSIONS_REGION_FLAGS_READ;
+nvtxPermDesc.regionRefType = NVTX_MEM_REGION_REF_TYPE_POINTER;
+nvtxPermDesc.region.pointer = ptr;
+
+nvtxMemPermissionsAssignBatch_t nvtxRegionsDesc = {};
+nvtxRegionsDesc.extCompatID = NVTX_EXT_COMPATID_MEM;
+nvtxRegionsDesc.structSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemPermissionsAssignBatch_t);
+nvtxRegionsDesc.permissions = permHandle;
+nvtxRegionsDesc.regionCount = 1;
+nvtxRegionsDesc.regionElementSize = <span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">sizeof</span>(nvtxMemPermissionsAssignRegionDesc_t);
+nvtxRegionsDesc.regionElements = &amp;nvtxPermDesc;
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Assign read-only permissions to allocation at address ptr.</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Permissions will be applied on scope bound to permHandle.</span>
+nvtxMemPermissionsAssign(nvtxDomain, &amp;nvtxRegionsDesc);
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Binding will happen on next kernel launch on this CPU thread, meaning the</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// stream for this launch will be the one bound to this permissions object.</span>
+nvtxMemPermissionsBind(
+    nvtxDomain,
+    permHandle,
+    NVTX_MEM_PERMISSIONS_BIND_SCOPE_CUDA_STREAM,
+    NVTX_MEM_PERMISSIONS_BIND_FLAGS_NONE);
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// permHandle is now bound to stream.</span>
+MyKernel&lt;&lt;&lt;BlocksNb, ThreadsNb, 0, stream&gt;&gt;&gt;(ptr);
+</pre>
+                              On permissions object creation or binding, you can specify
+                              inheritance restriction flags. For example, excluding write
+                              permissions will block access for all allocations with unassigned
+                              permissions on that scope. These are applied:
+                              <ul class="ul">
+                                 <li class="li"><samp class="ph codeph">nvtxMemPermissionsCreate</samp>: applied for
+                                    kernel launches on stream bound to the created object.
+                                    
+                                 </li>
+                                 <li class="li"><samp class="ph codeph">nvtxMemPermissionsBind</samp>: applied for next
+                                    kernel launch (on this CPU thread) and others using the
+                                    same stream.
+                                    
+                                 </li>
+                              </ul>
+                              
+                              
+                              Please note that Compute Sanitizer only supports
+                              <samp class="ph codeph">nvtxMemPermissionsBind</samp> with parameter
+                              <samp class="ph codeph">scope = NVTX_MEM_PERMISSIONS_BIND_SCOPE_CUDA_STREAM</samp>.
+                              
+                           </div>
+                           <div class="p">
+                              Permissions objects currently bound can be unbound using
+                              <samp class="ph codeph">nvtxMemPermissionsUnbind</samp> and destroyed using
+                              <samp class="ph codeph">nvtxMemPermissionsDestroy</samp>. Permissions object
+                              destruction will result in an unbinding.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+
+nvtxMemPermissionsUnbind(nvtxDomain, NVTX_MEM_PERMISSIONS_BIND_SCOPE_CUDA_STREAM)
+
+nvtxMemPermissionsDestroy(nvtxDomain, permHandle);
+</pre>
+                              Please note that Compute Sanitizer only supports
+                              <samp class="ph codeph">nvtxMemPermissionsUnbind</samp> with parameter
+                              <samp class="ph codeph">scope = NVTX_MEM_PERMISSIONS_BIND_SCOPE_CUDA_STREAM</samp>.
+                              
+                           </div>
+                           <div class="p">
+                              Peer devices access can be restricted for all allocations using
+                              <samp class="ph codeph">nvtxMemCudaSetPeerAccess</samp>. If no permissions are
+                              set on an active scope for an allocation using
+                              <samp class="ph codeph">nvtxMemPermissionsAssign</samp>, then default permissions
+                              set using <samp class="ph codeph">nvtxMemCudaSetPeerAccess</samp> are
+                              applied. The following example restricts accesses to read-only on
+                              all devices except <samp class="ph codeph">device</samp>.
+                              <pre xml:space="preserve">
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-comment">// Requires &lt;nvtx3/nvToolsExtMem.h&gt;</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="xslthl-keyword">auto</span> permHandle = nvtxMemCudaGetDeviceWidePermissions(nvtxDomain, device);
+nvtxMemCudaSetPeerAccess(
+    nvtxDomain,
+    permHandle,
+    NVTX_MEM_CUDA_PEER_ALL_DEVICES,
+    NVTX_MEM_PERMISSIONS_REGION_FLAGS_READ);
+nvtxMemCudaSetPeerAccess(
+    nvtxDomain,
+    permHandle,
+    device,
+    NVTX_MEM_PERMISSIONS_REGION_FLAGS_READ | NVTX_MEM_PERMISSIONS_REGION_FLAGS_WRITE | NVTX_MEM_PERMISSIONS_REGION_FLAGS_ATOMIC);
+</pre></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="limitations"><a name="limitations" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#limitations" name="limitations" shape="rect">3.&nbsp;Limitations</a></h2>
+                  <div class="body conbody">
+                     <div class="p">
+                        Please note the Compute Sanitizer support for NVTX Memory API has
+                        the following limitations:
+                        
+                        <ul class="ul">
+                           <li class="li">
+                              Allocation names are visible on leak and unused memory
+                              reports, but not on other error reports for now.
+                              
+                           </li>
+                           <li class="li">
+                              Allocation names must be encoded in ASCII, contain only
+                              printable characters, and contain between 1 and 49
+                              characters (must comply to the following regex:
+                              <samp class="ph codeph">^[:print:]{1,49}$</samp>)
+                              
+                           </li>
+                           <li class="li">
+                              Permissions are only applied to kernel launches. Other
+                              operations, such as <samp class="ph codeph">cudaMemcpy</samp> or
+                              <samp class="ph codeph">cudaMemset</samp>, are not supported for now.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="notices-header"><a name="notices-header" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#notices-header" name="notices-header" shape="rect">Notices</a></h2>
+                  <div class="topic reference nested1" id="notice"><a name="notice" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#notice" name="notice" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Notice</h3>
+                           <p class="p">ALL NVIDIA DESIGN SPECIFICATIONS, REFERENCE BOARDS, FILES, DRAWINGS, DIAGNOSTICS, LISTS, AND OTHER DOCUMENTS (TOGETHER AND
+                              SEPARATELY, "MATERIALS") ARE BEING PROVIDED "AS IS." NVIDIA MAKES NO WARRANTIES, EXPRESSED, IMPLIED, STATUTORY, OR OTHERWISE
+                              WITH RESPECT TO THE MATERIALS, AND EXPRESSLY DISCLAIMS ALL IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTABILITY, AND FITNESS
+                              FOR A PARTICULAR PURPOSE. 
+                           </p>
+                           <p class="p">Information furnished is believed to be accurate and reliable. However, NVIDIA Corporation assumes no responsibility for the
+                              consequences of use of such information or for any infringement of patents or other rights of third parties that may result
+                              from its use. No license is granted by implication of otherwise under any patent rights of NVIDIA Corporation. Specifications
+                              mentioned in this publication are subject to change without notice. This publication supersedes and replaces all other information
+                              previously supplied. NVIDIA Corporation products are not authorized as critical components in life support devices or systems
+                              without express written approval of NVIDIA Corporation.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="trademarks"><a name="trademarks" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#trademarks" name="trademarks" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Trademarks</h3>
+                           <p class="p">NVIDIA and the NVIDIA logo are trademarks or registered trademarks of NVIDIA Corporation
+                              in the U.S. and other countries.  Other company and product names may be trademarks of
+                              the respective companies with which they are associated.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="copyright-past-to-present"><a name="copyright-past-to-present" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#copyright-past-to-present" name="copyright-past-to-present" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Copyright</h3>
+                           <p class="p">© <span class="ph">2021</span>-<span class="ph">2022</span> NVIDIA
+                              Corporation and affiliates. All rights reserved.
+                           </p>
+                           <p class="p">This product includes software developed by the Syncro Soft SRL (http://www.sync.ro/).</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>

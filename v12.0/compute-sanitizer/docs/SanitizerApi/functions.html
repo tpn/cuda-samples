@@ -1,0 +1,449 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="reference"></meta>
+      <meta name="DC.Title" content="Data Fields"></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="functions"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>Sanitizer Api :: Compute Sanitizer Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      --&gt;
+      
+      <script src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="https://docs.nvidia.com/compute-sanitizer/SanitizerApi/index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">Compute Sanitizer Documentation</span><form id="search" method="get" action="search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="../index.html" title="The root of the site.">Compute Sanitizer
+                  v2022.4.0</a></div>
+            <div class="category"><a href="index.html" title="Sanitizer Api">Sanitizer Api</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="modules.html#modules">1.&nbsp;Modules</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__BARRIER__API">1.1.&nbsp;Sanitizer Barrier API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__CALLBACK__API">1.2.&nbsp;Sanitizer Callback API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__MEMORY__API">1.3.&nbsp;Sanitizer Memory API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__PATCHING__API">1.4.&nbsp;Sanitizer Patching API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__RESULT__API">1.5.&nbsp;Sanitizer Result Codes</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="modules.html#group__SANITIZER__STREAM__API">1.6.&nbsp;Sanitizer Stream API</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="annotated.html#annotated">2.&nbsp;Data Structures</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__BatchMemopData">2.1.&nbsp;Sanitizer_BatchMemopData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__CallbackData">2.2.&nbsp;Sanitizer_CallbackData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__EventData">2.3.&nbsp;Sanitizer_EventData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphExecData">2.4.&nbsp;Sanitizer_GraphExecData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphLaunchData">2.5.&nbsp;Sanitizer_GraphLaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__GraphNodeLaunchData">2.6.&nbsp;Sanitizer_GraphNodeLaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__LaunchData">2.7.&nbsp;Sanitizer_LaunchData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__MemcpyData">2.8.&nbsp;Sanitizer_MemcpyData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__MemsetData">2.9.&nbsp;Sanitizer_MemsetData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceArrayData">2.10.&nbsp;Sanitizer_ResourceArrayData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceContextData">2.11.&nbsp;Sanitizer_ResourceContextData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData">2.12.&nbsp;Sanitizer_ResourceFunctionsLazyLoadedData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceMemoryData">2.13.&nbsp;Sanitizer_ResourceMemoryData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceMempoolData">2.14.&nbsp;Sanitizer_ResourceMempoolData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceModuleData">2.15.&nbsp;Sanitizer_ResourceModuleData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__ResourceStreamData">2.16.&nbsp;Sanitizer_ResourceStreamData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__SynchronizeData">2.17.&nbsp;Sanitizer_SynchronizeData</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="annotated.html#structSanitizer__UvmData">2.18.&nbsp;Sanitizer_UvmData</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="functions.html#functions">3.&nbsp;Data Fields</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="notices-header.html#notices-header">Notices</a></div>
+                  <ul></ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="breadcrumbs"><a href="annotated.html" shape="rect">&lt; Previous</a> | <a href="notices-header.html" shape="rect">Next &gt;</a></div>
+               <div id="release-info">Sanitizer Api
+                  -
+                  
+                  v2022.4.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated July 5, 2022
+                  -
+                  <a href="mailto:devtools@nvidia.com?subject=Compute Sanitizer Documentation Feedback: Sanitizer Api">Send Feedback</a></div>
+            </div>
+            <article id="contents">
+               <div class="topic nested1" id="functions"><a name="functions" shape="rect">
+                     <!-- --></a><h2 class="topictitle2">3.&nbsp;Data Fields</h2>
+                  <div class="body refbody">
+                     <div class="section">
+                        <p class="p">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field: </p>
+                     </div>
+                     <div class="section" id="functions__a"><a name="functions__a" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">A</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">address</dt>
+                           <dd class="dd first"><a class="xref" href="annotated.html#structSanitizer__ResourceMemoryData" title="Data passed into a memory resource callback function." shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemsetData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_UvmData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_BatchMemopData</a></dd>
+                           <dt class="dt dlterm">apiContext</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">apiStream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__b"><a name="functions__b" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">B</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">blockDim_x</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">blockDim_y</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">blockDim_z</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__c"><a name="functions__c" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">C</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">callbackSite</dt>
+                           <dd class="dd first"><a class="xref" href="annotated.html#structSanitizer__CallbackData" title="Data passed into a runtime or driver API callback function." shape="rect">Sanitizer_CallbackData</a></dd>
+                           <dt class="dt dlterm">clusterDim_x</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">clusterDim_y</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">clusterDim_z</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">context</dt>
+                           <dd class="dd first"><a class="xref" href="annotated.html#structSanitizer__GraphLaunchData" title="Data passed into a graph launch callback function." shape="rect">Sanitizer_GraphLaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__BatchMemopData" title="Data passed into a batch memop callback function." shape="rect">Sanitizer_BatchMemopData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__MemsetData" title="Data passed into a memset callback function." shape="rect">Sanitizer_MemsetData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__SynchronizeData" title="Data passed into a synchronization callback function." shape="rect">Sanitizer_SynchronizeData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__ResourceFunctionsLazyLoadedData" title="Data passed into a CUDA function callback function." shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__ResourceArrayData" title="Data passed into a CUDA array callback function." shape="rect">Sanitizer_ResourceArrayData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__ResourceModuleData" title="Data passed into a module resource callback function." shape="rect">Sanitizer_ResourceModuleData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__ResourceStreamData" title="Data passed into a stream resource callback function." shape="rect">Sanitizer_ResourceStreamData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__ResourceContextData" title="Data passed into a context resource callback function." shape="rect">Sanitizer_ResourceContextData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_CallbackData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__UvmData" title="Data passed into a managed memory callback function." shape="rect">Sanitizer_UvmData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_EventData</a></dd>
+                           <dt class="dt dlterm">cubinSize</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceModuleData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__d"><a name="functions__d" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">D</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">device</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceContextData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMempoolData</a></dd>
+                           <dt class="dt dlterm">direction</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">dstAddress</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">dstContext</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">dstPitch</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">dstStream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__e"><a name="functions__e" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">E</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">event</dt>
+                           <dd class="dd first"><a class="xref" href="annotated.html#structSanitizer__EventData" title="Data passed into an event callback function." shape="rect">Sanitizer_EventData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__f"><a name="functions__f" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">F</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">flags</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dt class="dt dlterm">function</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">functionName</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_CallbackData</a></dd>
+                           <dt class="dt dlterm">functionParams</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_CallbackData</a></dd>
+                           <dt class="dt dlterm">functionReturnValue</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_CallbackData</a></dd>
+                           <dt class="dt dlterm">functions</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__g"><a name="functions__g" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">G</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">graph</dt>
+                           <dd class="dd first"><a class="xref" href="annotated.html#structSanitizer__GraphExecData" title="Data passed into a graphexec creation callback function." shape="rect">Sanitizer_GraphExecData</a></dd>
+                           <dt class="dt dlterm">graphExec</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphExecData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphLaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function." shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">gridDim_x</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">gridDim_y</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">gridDim_z</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">gridId</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__h"><a name="functions__h" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">H</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">hApiStream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">hArray</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceArrayData</a></dd>
+                           <dt class="dt dlterm">hDstStream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">hLaunch</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dt class="dt dlterm">hSrcStream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">hStream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemsetData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_SynchronizeData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceStreamData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_UvmData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_EventData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphLaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_BatchMemopData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__i"><a name="functions__i" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">I</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">isAsync</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemsetData</a></dd>
+                           <dt class="dt dlterm">isDeviceLaunch</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphExecData</a></dd>
+                           <dt class="dt dlterm">isGraphUpload</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphLaunchData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__l"><a name="functions__l" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">L</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">launchData</dt>
+                           <dd class="dd first"><a class="xref" href="annotated.html#structSanitizer__GraphNodeLaunchData" title="Data passed into a graph node launch callback function." shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">launchId</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">library</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceModuleData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__m"><a name="functions__m" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">M</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">memAllocData</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">memcpyData</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">memFreeAddress</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">memoryPool</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="annotated.html#structSanitizer__ResourceMempoolData" title="Data passed into a mempool resource callback function." shape="rect">Sanitizer_ResourceMempoolData</a></dd>
+                           <dt class="dt dlterm">memsetData</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">module</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceModuleData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__n"><a name="functions__n" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">N</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">node</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">nodeType</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphNodeLaunchData</a></dd>
+                           <dt class="dt dlterm">numFunctions</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceFunctionsLazyLoadedData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__p"><a name="functions__p" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">P</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">pCubin</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceModuleData</a></dd>
+                           <dt class="dt dlterm">peerDevice</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMempoolData</a></dd>
+                           <dt class="dt dlterm">permissions</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__s"><a name="functions__s" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">S</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">size</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">sourceDevice</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dt class="dt dlterm">srcAddress</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">srcContext</dt>
+                           <dd class="dd first"><a class="xref" href="annotated.html#structSanitizer__MemcpyData" title="Data passed into a memcpy callback function." shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">srcPitch</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">srcStream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                           <dt class="dt dlterm">stream</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_LaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_SynchronizeData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_EventData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_BatchMemopData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_UvmData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_GraphLaunchData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceStreamData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemsetData</a></dd>
+                           <dt class="dt dlterm">symbolName</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_CallbackData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__t"><a name="functions__t" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">T</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">type</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_BatchMemopData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__v"><a name="functions__v" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">V</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">value</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemsetData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_BatchMemopData</a></dd>
+                           <dt class="dt dlterm">visibility</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceMemoryData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_UvmData</a></dd>
+                        </dl>
+                     </div>
+                     <div class="section" id="functions__w"><a name="functions__w" shape="rect">
+                           <!-- --></a><h2 class="title sectiontitle">W</h2>
+                        <dl class="dl table-display-members">
+                           <dt class="dt dlterm">width</dt>
+                           <dd class="dd first"><a class="xref" href="modules.html" shape="rect">Sanitizer_ResourceArrayData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemsetData</a></dd>
+                           <dd class="dd not_first"><a class="xref" href="modules.html" shape="rect">Sanitizer_MemcpyData</a></dd>
+                        </dl>
+                     </div>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>

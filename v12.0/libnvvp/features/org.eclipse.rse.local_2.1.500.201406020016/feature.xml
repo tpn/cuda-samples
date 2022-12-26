@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (c) 2005, 2012 IBM Corporation and others.
+     All rights reserved. This program and the accompanying materials
+     are made available under the terms of the Eclipse Public License v1.0
+     which accompanies this distribution, and is available at
+     http://www.eclipse.org/legal/epl-v10.html
+    
+     Contributors:
+         IBM Corporation - initial API and implementation
+ -->
+<feature
+      id="org.eclipse.rse.local"
+      label="%featureName"
+      version="2.1.500.201406020016"
+      provider-name="%providerName"
+      plugin="org.eclipse.rse.services.local">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%tmUpdateSiteName" url="http://download.eclipse.org/tm/updates/3.5"/>
+      <discovery label="%tmUpdateSiteName" url="http://download.eclipse.org/tm/updates/3.5"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.rse.services" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.rse.subsystems.files.core" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.rse.ui" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.rse.subsystems.processes.core" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.rse.subsystems.shells.core" version="3.0.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.rse.services.local"
+         download-size="59"
+         install-size="114"
+         version="2.2.0.201403251512"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.rse.subsystems.files.local"
+         download-size="25"
+         install-size="48"
+         version="2.1.300.201403251512"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.rse.subsystems.processes.local"
+         download-size="17"
+         install-size="26"
+         version="2.1.400.201403100950"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.rse.subsystems.shells.local"
+         download-size="18"
+         install-size="27"
+         version="2.1.400.201403100950"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.rse.connectorservice.local"
+         download-size="14"
+         install-size="20"
+         version="2.1.400.201403100950"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>viper</artifactId>
+    <groupId>com.nvidia.viper</groupId>
+    <version>${cuda.version}-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <groupId>com.nvidia.viper</groupId>
+  <artifactId>com.nvidia.viper.feature</artifactId>
+  <version>${cuda.version}-SNAPSHOT</version>
+  <packaging>eclipse-feature</packaging>
+        <profiles>
+                <profile>
+                        <activation>
+                                <property><name>make.destination</name></property>
+                        </activation>
+                        <build>
+                                <directory>${make.destination}/${project.artifactId}</directory>
+                        </build>
+                </profile>
+	</profiles>
+</project>

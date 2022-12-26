@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/description=
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/enabled=true
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/isSystem=false
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/name=module-metadata-repository@C\:\\dvs\\p4\\build\\sw\\rel\\gpgpu\\toolkit\\r12.0\\built\\x86_64_win32_release\\viper\\com.nvidia.viper.product
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/provider=
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/suffix=p2content.xml
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/type=org.eclipse.tycho.repository.module.ModuleMetadataRepository
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/uri=file\:/C\:/dvs/p4/build/sw/rel/gpgpu/toolkit/r12.0/built/x86_64_win32_release/viper/com.nvidia.viper.product/
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product/version=1.0.0
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product_targetPlatformRepository/enabled=true
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product_targetPlatformRepository/isSystem=false
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product_targetPlatformRepository/name=TychoTargetPlatform
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product_targetPlatformRepository/suffix=content.xml
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product_targetPlatformRepository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product_targetPlatformRepository/uri=file\:/C\:/dvs/p4/build/sw/rel/gpgpu/toolkit/r12.0/built/x86_64_win32_release/viper/com.nvidia.viper.product/targetPlatformRepository/
+repositories/file\:_C\:_dvs_p4_build_sw_rel_gpgpu_toolkit_r12.0_built_x86_64_win32_release_viper_com.nvidia.viper.product_targetPlatformRepository/version=0.0.1

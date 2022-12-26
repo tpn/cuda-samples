@@ -1,0 +1,882 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="concept"></meta>
+      <meta name="DC.Title" content="Release Notes"></meta>
+      <meta name="abstract" content="Compute Sanitizer Release Notes."></meta>
+      <meta name="description" content="Compute Sanitizer Release Notes."></meta>
+      <meta name="DC.Coverage" content="Compute Sanitizer"></meta>
+      <meta name="DC.subject" content="Release Notes"></meta>
+      <meta name="keywords" content="Release Notes"></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="abstract"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>Release Notes :: Compute Sanitizer Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      --&gt;
+      
+      <script src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="https://docs.nvidia.com/compute-sanitizer/ReleaseNotes/index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">Compute Sanitizer Documentation</span><form id="search" method="get" action="search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="../index.html" title="The root of the site.">Compute Sanitizer
+                  v2022.4.0</a></div>
+            <div class="category"><a href="index.html" title="Release Notes">Release Notes</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="#whats-new">1.&nbsp;Release Notes</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="#updates-2022-4">1.1.&nbsp;Updates in 2022.4</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2022-3">1.2.&nbsp;Updates in 2022.3</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2022-2-1">1.3.&nbsp;Updates in 2022.2.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2022-2">1.4.&nbsp;Updates in 2022.2</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2022-1-1">1.5.&nbsp;Updates in 2022.1.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2022-1">1.6.&nbsp;Updates in 2022.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2021-3-1">1.7.&nbsp;Updates in 2021.3.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2021-3">1.8.&nbsp;Updates in 2021.3</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2021-2-2">1.9.&nbsp;Updates in 2021.2.2</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2021-2-1">1.10.&nbsp;Updates in 2021.2.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2021-2">1.11.&nbsp;Updates in 2021.2</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2021-1-1">1.12.&nbsp;Updates in 2021.1.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2021-1">1.13.&nbsp;Updates in 2021.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2020-3-1">1.14.&nbsp;Updates in 2020.3.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2020-3">1.15.&nbsp;Updates in 2020.3</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2020-2-1">1.16.&nbsp;Updates in 2020.2.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2020-2">1.17.&nbsp;Updates in 2020.2</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2020-1-2">1.18.&nbsp;Updates in 2020.1.2</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2020-1-1">1.19.&nbsp;Updates in 2020.1.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2020-1">1.20.&nbsp;Updates in 2020.1</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#updates-2019-1">1.21.&nbsp;Updates in 2019.1</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="#known-limitations">2.&nbsp;Known Limitations</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="#known-issues">3.&nbsp;Known Issues</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="#support">4.&nbsp;Support</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="#platform-support">4.1.&nbsp;Platform Support</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="#gpu-support">4.2.&nbsp;GPU Support</a></div>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="release-info">Release Notes
+                  (<a href="../pdf/ReleaseNotes.pdf">PDF</a>)
+                  
+                  -
+                  
+                  v2022.4.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated July 5, 2022
+                  -
+                  <a href="mailto:devtools@nvidia.com?subject=Compute Sanitizer Documentation Feedback: Release Notes">Send Feedback</a></div>
+            </div>
+            <article id="contents">
+               <div class="topic nested0" id="abstract"><a name="abstract" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#abstract" name="abstract" shape="rect">Release Notes</a></h2>
+                  <div class="body conbody">
+                     <p class="shortdesc">Compute Sanitizer Release Notes.</p>
+                     <p class="p">Release notes and known issues.
+                        
+                     </p>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="whats-new"><a name="whats-new" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#whats-new" name="whats-new" shape="rect">1.&nbsp;Release Notes</a></h2>
+                  <div class="body conbody"></div>
+                  <div class="topic concept nested1" id="updates-2022-4"><a name="updates-2022-4" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2022-4" name="updates-2022-4" shape="rect">Updates in 2022.4</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for <samp class="ph codeph">__nv_aligned_device_malloc</samp>.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for <samp class="ph codeph">ldmatrix</samp> and <samp class="ph codeph">stmatrix</samp> instructions.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for cache control operations when using the <samp class="ph codeph">--check-cache-control</samp>
+                              command-line option.
+                              
+                           </li>
+                           <li class="li">
+                              Added new command-line option <samp class="ph codeph">--unused-memory-threshold</samp> to control
+                              the threshold for unused memory reports.
+                              
+                           </li>
+                           <li class="li">
+                              Improved support for CUDA pipeline memcpy-async related hazards in racecheck.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2022-3"><a name="updates-2022-3" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2022-3" name="updates-2022-3" shape="rect">Updates in 2022.3</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for the NVIDIA GH100/SM 9.x GPU architecture.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for the NVIDIA AD10x/SM 8.9 GPU architecture.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for lazy kernel loading.
+                              
+                           </li>
+                           <li class="li">
+                              Added memcheck support for distributed shared memory.
+                              
+                           </li>
+                           <li class="li">
+                              Added new options <samp class="ph codeph">--num-callers-device</samp> and <samp class="ph codeph">--num-callers-host</samp> to control
+                              the number of callers to print in stack traces.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for OptiX 7.6 applications.
+                              
+                           </li>
+                           <li class="li">
+                              Fix bug on Linux ppc64le where the host stack trace was incomplete.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2022-2-1"><a name="updates-2022-2-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2022-2-1" name="updates-2022-2-1" shape="rect">Updates in 2022.2.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Fixed incorrect device backtrace for applications compiled with <samp class="ph codeph">-lineinfo</samp>.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2022-2"><a name="updates-2022-2" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2022-2" name="updates-2022-2" shape="rect">Updates in 2022.2</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added memcheck support for use-before-alloc and use-after-free race detection.
+                              See the <a class="xref" href="../ComputeSanitizer/index.html#stream-ordered-races" shape="rect">
+                                 stream-ordered race detection documentation
+                                 </a>
+                              for more information.
+                              
+                           </li>
+                           <li class="li">
+                              Added leakcheck support for asynchronous allocations, OptiX resources and CUDA memmap (on Linux only for the latter).
+                              
+                           </li>
+                           <li class="li">
+                              Added option to ignore <samp class="ph codeph">CUDA_ERROR_NOT_FOUND</samp> error codes returned by the <samp class="ph codeph">cuGetProcAddress</samp> API.
+                              
+                           </li>
+                           <li class="li">
+                              Added new public API functions to allocate and free page-locked host memory.
+                              
+                           </li>
+                           <li class="li">
+                              Added public API callbacks for the <a class="xref" href="https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__EVENT.html" target="_blank" shape="rect">event management</a> API.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2022-1-1"><a name="updates-2022-1-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2022-1-1" name="updates-2022-1-1" shape="rect">Updates in 2022.1.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Fixed initcheck issue where the tool would incorrectly abort a CUDA kernel launch
+                              after reporting an uninitialized access on Windows with hardware scheduling enabled.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2022-1"><a name="updates-2022-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2022-1" name="updates-2022-1" shape="rect">Updates in 2022.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for generating coredumps.
+                              
+                           </li>
+                           <li class="li">
+                              Improved support for stack overflow detection.
+                              
+                           </li>
+                           <li class="li">
+                              Added new option <samp class="ph codeph">--target-processes-filter</samp> to filter the processes being tracked by name.
+                              
+                           </li>
+                           <li class="li">
+                              Added initcheck support for asynchronous allocations.
+                              Requires CUDA driver version 510 or newer.
+                              
+                           </li>
+                           <li class="li">
+                              Added initcheck support for accesses on peer devices.
+                              Requires CUDA driver version 510 or newer.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for OptiX 7 applications.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for tracking the child processes of 32-bit processes in multi-process applications
+                              on Linux and Windows x86_64.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2021-3-1"><a name="updates-2021-3-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2021-3-1" name="updates-2021-3-1" shape="rect">Updates in 2021.3.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Fixed intermittent issue on vGPU where synccheck would incorrectly detect divergent threads.
+                              
+                           </li>
+                           <li class="li">
+                              Fixed potential hang when tracking several graph launches.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2021-3"><a name="updates-2021-3" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2021-3" name="updates-2021-3" shape="rect">Updates in 2021.3</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Improved Linux host backtrace.
+                              
+                           </li>
+                           <li class="li">
+                              Removed requirement to call <samp class="ph codeph">cudaDeviceReset()</samp> for accurate reporting of
+                              memory leaks and unused memory features.
+                              
+                           </li>
+                           <li class="li">
+                              Fixed synccheck potential hang when calling <samp class="ph codeph">__syncthreads</samp> in divergent
+                              code paths on Volta GPUs or newer.
+                              
+                           </li>
+                           <li class="li">
+                              Added print of nearest allocation information for memcheck precise errors in global memory.
+                              
+                           </li>
+                           <li class="li">
+                              Added warning when calling device-side <samp class="ph codeph">malloc</samp> with an empty size.
+                              
+                           </li>
+                           <li class="li">
+                              Added separate public API device callback for <samp class="ph codeph">cuda::memcpy_async</samp>.
+                              
+                           </li>
+                           <li class="li">
+                              Added new command-line option <samp class="ph codeph">--num-cuda-barriers</samp> to override the expected
+                              number of <samp class="ph codeph">cuda::barrier</samp> used by the target application.
+                              
+                           </li>
+                           <li class="li">
+                              Added new command-line options <samp class="ph codeph">--print-session-details</samp> to print session
+                              information and <samp class="ph codeph">--save-session-details</samp> to save it to the output file.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for WSL2.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2021-2-2"><a name="updates-2021-2-2" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2021-2-2" name="updates-2021-2-2" shape="rect">Updates in 2021.2.2</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Enabled stack canaries with random canary values for L4T builds.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2021-2-1"><a name="updates-2021-2-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2021-2-1" name="updates-2021-2-1" shape="rect">Updates in 2021.2.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added device backtrace for malloc/free errors in CUDA kernels.
+                              
+                           </li>
+                           <li class="li">
+                              Improved racecheck host memory footprint.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2021-2"><a name="updates-2021-2" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2021-2" name="updates-2021-2" shape="rect">Updates in 2021.2</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added racecheck and synccheck support for <samp class="ph codeph">cuda::barrier</samp> on Ampere GPUs or newer.
+                              
+                           </li>
+                           <li class="li">
+                              Added racecheck support for <samp class="ph codeph">__syncwarp</samp> with partial mask.
+                              
+                           </li>
+                           <li class="li">
+                              Added <samp class="ph codeph">--launch-count</samp> and <samp class="ph codeph">--launch-skip</samp> filtering options.
+                              See the <a class="xref" href="../ComputeSanitizer/index.html#command-line-options" shape="rect">
+                                 Command Line Options documentation
+                                 </a>
+                              for more information.
+                              
+                           </li>
+                           <li class="li"><samp class="ph codeph">--filter</samp> and <samp class="ph codeph">--exclude</samp> options have been respectively renamed to
+                              <samp class="ph codeph">--kernel-regex</samp> and <samp class="ph codeph">--kernel-regex-exclude</samp>.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for QNX and Linux aarch64 platforms.
+                              
+                           </li>
+                           <li class="li">
+                              Added support for CUDA graphs memory nodes.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2021-1-1"><a name="updates-2021-1-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2021-1-1" name="updates-2021-1-1" shape="rect">Updates in 2021.1.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Fixed an issue where incorrect line numbers could be shown in errors reports.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2021-1"><a name="updates-2021-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2021-1" name="updates-2021-1" shape="rect">Updates in 2021.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for allocation padding via the <samp class="ph codeph">--padding</samp> option.
+                              
+                           </li>
+                           <li class="li">
+                              Added experimental support for NVTX memory API using option
+                              <samp class="ph codeph">--nvtx yes</samp>. Please refer to
+                              <a class="xref" href="../SanitizerNvtxGuide/index.html#about-nvtx" shape="rect">
+                                 NVTX API for Compute Sanitizer Reference Manual
+                                 </a>
+                              for more information.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2020-3-1"><a name="updates-2020-3-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2020-3-1" name="updates-2020-3-1" shape="rect">Updates in 2020.3.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Fixed issue when launching a CUDA graph multiple times.
+                              
+                           </li>
+                           <li class="li">
+                              Fixed false positives when using cooperative groups synchronization primitives with initcheck and synccheck.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2020-3"><a name="updates-2020-3" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2020-3" name="updates-2020-3" shape="rect">Updates in 2020.3</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for CUDA memory pools and CUDA API reduced serialization.
+                              
+                           </li>
+                           <li class="li">
+                              Added host backtrace for unused memory reports.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2020-2-1"><a name="updates-2020-2-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2020-2-1" name="updates-2020-2-1" shape="rect">Updates in 2020.2.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Fixed crash when loading cubins of size larger than 2 GiB.
+                              
+                           </li>
+                           <li class="li">
+                              Fixed error detection on systems with multiple GPUs.
+                              
+                           </li>
+                           <li class="li">
+                              Fixed issue when using CUDA Virtual Memory Management API <samp class="ph codeph">cuMemSetAccess</samp> to
+                              remove access to a subset of devices on a system with multiple GPUs.
+                              
+                           </li>
+                           <li class="li">
+                              Added public API to translate between sanitizer and CUDA stream handles.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2020-2"><a name="updates-2020-2" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2020-2" name="updates-2020-2" shape="rect">Updates in 2020.2</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for CUDA graphs and CUDA memmap APIs.
+                              
+                           </li>
+                           <li class="li">
+                              The memory access callback of the public API has been split into three distinct callbacks
+                              corresponding to global, shared and local memory accesses.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2020-1-2"><a name="updates-2020-1-2" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2020-1-2" name="updates-2020-1-2" shape="rect">Updates in 2020.1.2</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added sanitizer stream API. This fixes tool crashes when per-thread streams are being used.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2020-1-1"><a name="updates-2020-1-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2020-1-1" name="updates-2020-1-1" shape="rect">Updates in 2020.1.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for Windows Hardware-accelerated GPU scheduling
+                              
+                           </li>
+                           <li class="li">
+                              Added support for tracking child processes spawned by the application launched
+                              under the tool via the <samp class="ph codeph">--target-processes</samp> CLI option.
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2020-1"><a name="updates-2020-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2020-1" name="updates-2020-1" shape="rect">Updates in 2020.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Initial release of the Compute Sanitizer (with CUDA 11.0)
+                              
+                           </li>
+                        </ul>
+                        <p class="p">
+                           Updates to the Sanitizer API :
+                           
+                        </p>
+                        <ul class="ul">
+                           <li class="li">
+                              Added support for per-thread streams
+                              
+                           </li>
+                           <li class="li">
+                              Added APIs to retrieve the PC and size of a CUDA function or patch
+                              
+                           </li>
+                           <li class="li">
+                              Added callback for <samp class="ph codeph">cudaStreamAttachMemAsync</samp></li>
+                           <li class="li">
+                              Added direction to memcpy callback data
+                              
+                           </li>
+                           <li class="li">
+                              Added stream to memcpy and memset callbacks data
+                              
+                           </li>
+                           <li class="li">
+                              Added launch callback after syscall setup
+                              
+                           </li>
+                           <li class="li">
+                              Added visibility field to allocation callback data
+                              
+                           </li>
+                           <li class="li">
+                              Added PC argument to block entry callback
+                              
+                           </li>
+                           <li class="li">
+                              Added incoming value to memory access callbacks
+                              
+                           </li>
+                           <li class="li">
+                              Added threadCount to barrier callbacks
+                              
+                           </li>
+                           <li class="li">
+                              Added cooperative group flags for barrier and function callbacks
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="updates-2019-1"><a name="updates-2019-1" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#updates-2019-1" name="updates-2019-1" shape="rect">Updates in 2019.1</a></h3>
+                     <div class="body conbody">
+                        <ul class="ul">
+                           <li class="li">
+                              Initial release of the Compute Sanitizer API (with CUDA 10.1)
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="known-limitations"><a name="known-limitations" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#known-limitations" name="known-limitations" shape="rect">2.&nbsp;Known Limitations</a></h2>
+                  <div class="body conbody">
+                     <ul class="ul">
+                        <li class="li">
+                           Applications run much slower under the Compute Sanitizer tools.
+                           This may cause some kernel launches to fail with a launch timeout error
+                           when running with the Compute Sanitizer enabled.
+                           
+                        </li>
+                        <li class="li"> Compute Sanitizer tools do not support device backtrace on Maxwell devices (SM
+                           5.x). 
+                        </li>
+                        <li class="li"> Compute Sanitizer tools do not support device backtrace on Windows Server 2016
+                           for devices in WDDM mode.
+                           
+                        </li>
+                        <li class="li">
+                           Compute Sanitizer tools do not support device backtrace and coredumps on WSL2.
+                           
+                        </li>
+                        <li class="li">
+                           Compute Sanitizer tools do not support CUDA/Direct3D interop.
+                           
+                        </li>
+                        <li class="li">
+                           Compute Sanitizer tools do not support CUDA/Vulkan interop.
+                           
+                        </li>
+                        <li class="li">
+                           The memcheck tool does not support CUDA API error checking for API calls made on the
+                           GPU using dynamic parallelism.
+                           
+                        </li>
+                        <li class="li">
+                           The racecheck, synccheck and initcheck tools do not support CUDA dynamic parallelism.
+                           
+                        </li>
+                        <li class="li">
+                           CUDA dynamic parallelism is not supported when Windows Hardware-accelerated GPU scheduling
+                           is enabled.
+                           
+                        </li>
+                        <li class="li">
+                           Compute Sanitizer tools cannot interoperate with other CUDA developer tools. This includes
+                           CUDA coredumps which are automatically disabled by the Compute Sanitizer. They can be
+                           enabled instead by using the <samp class="ph codeph">--generate-coredump</samp> option.
+                           
+                        </li>
+                        <li class="li">
+                           Compute Sanitizer tools do not support IPC memory pools. Using it will result in false
+                           positives.
+                           
+                        </li>
+                        <li class="li">
+                           Compute Sanitizer tools are not supported when SLI is enabled.
+                           
+                        </li>
+                        <li class="li">
+                           The racecheck and synccheck tools do not support distributed shared memory.
+                           
+                        </li>
+                        <li class="li">
+                           Compute Sanitizer tools do not support CUDA device graph launches.
+                           
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="known-issues"><a name="known-issues" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#known-issues" name="known-issues" shape="rect">3.&nbsp;Known Issues</a></h2>
+                  <div class="body conbody">
+                     <ul class="ul">
+                        <li class="li">
+                           The racecheck tool may print incorrect data for "Current value" when reporting
+                           a hazard on a shared memory location where the last access was an atomic operation.
+                           This can also impact the severity of this hazard.
+                           
+                        </li>
+                        <li class="li">
+                           With some versions of Windows Server 2016, programs built with
+                           some configurations might hang when used with the Compute
+                           Sanitizer. A workaround for this issue is to use the Computer
+                           Sanitizer with <samp class="ph codeph">--show-backtrace device</samp> or
+                           <samp class="ph codeph">--show-backtrace no</samp> options.
+                           
+                        </li>
+                        <li class="li">
+                           On QNX, when using the <samp class="ph codeph">--target-processes all</samp> option, analyzing shell scripts may hang after the script has completed.
+                           End the application using <dfn class="term">Ctrl-C</dfn> on the command line in that case.
+                           
+                        </li>
+                        <li class="li">
+                           The initcheck tool might report false positives for device-to-host cudaMemcpy operations on padded structs that were initialized
+                           by a CUDA kernel. The <samp class="ph codeph">#pragma pack</samp> directive can be used to disable the padding as a workaround.
+                           
+                        </li>
+                        <li class="li">
+                           When a hardware exception occur during a kernel launch that was skipped due to the usage of the <samp class="ph codeph">kernel-regex</samp>,
+                           <samp class="ph codeph">kernel-regex-exclude</samp>, <samp class="ph codeph">launch-count</samp> or <samp class="ph codeph">launch-skip</samp> options, the memcheck tool will not be able
+                           to report additional details as an imprecise error. To get imprecise information about a hardware exception without
+                           running all the check, the option <samp class="ph codeph">--binary-patching no</samp> can be used as a workaround.
+                           
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="support"><a name="support" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#support" name="support" shape="rect">4.&nbsp;Support</a></h2>
+                  <div class="body conbody">
+                     <p class="p">
+                        Information on supported platforms and GPUs.
+                        
+                     </p>
+                  </div>
+                  <div class="topic concept nested1" id="platform-support"><a name="platform-support" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#platform-support" name="platform-support" shape="rect">4.1.&nbsp;Platform Support</a></h3>
+                     <div class="body conbody">
+                        <div class="tablenoborder"><a name="platform-support__supported-platforms" shape="rect">
+                              <!-- --></a><table cellpadding="4" cellspacing="0" summary="" id="platform-support__supported-platforms" class="table" frame="border" border="1" rules="all">
+                              <caption><span class="tablecap">Table 1. Platforms supported by Compute Sanitizer</span></caption>
+                              <thead class="thead" align="left">
+                                 <tr class="row">
+                                    <th class="entry" valign="top" width="50%" id="d54e802" rowspan="1" colspan="1">Platform</th>
+                                    <th class="entry" valign="top" width="50%" id="d54e805" rowspan="1" colspan="1">Support</th>
+                                 </tr>
+                              </thead>
+                              <tbody class="tbody">
+                                 <tr class="row">
+                                    <td class="entry" valign="top" width="50%" headers="d54e802" rowspan="1" colspan="1">Windows</td>
+                                    <td class="entry" valign="top" width="50%" headers="d54e805" rowspan="1" colspan="1">Yes</td>
+                                 </tr>
+                                 <tr class="row">
+                                    <td class="entry" valign="top" width="50%" headers="d54e802" rowspan="1" colspan="1">Linux (x86_64)</td>
+                                    <td class="entry" valign="top" width="50%" headers="d54e805" rowspan="1" colspan="1">Yes</td>
+                                 </tr>
+                                 <tr class="row">
+                                    <td class="entry" valign="top" width="50%" headers="d54e802" rowspan="1" colspan="1">Linux (ppc64le)</td>
+                                    <td class="entry" valign="top" width="50%" headers="d54e805" rowspan="1" colspan="1">Yes</td>
+                                 </tr>
+                                 <tr class="row">
+                                    <td class="entry" valign="top" width="50%" headers="d54e802" rowspan="1" colspan="1">Linux (aarch64sbsa)</td>
+                                    <td class="entry" valign="top" width="50%" headers="d54e805" rowspan="1" colspan="1">Yes</td>
+                                 </tr>
+                                 <tr class="row">
+                                    <td class="entry" valign="top" width="50%" headers="d54e802" rowspan="1" colspan="1">Linux (aarch64)</td>
+                                    <td class="entry" valign="top" width="50%" headers="d54e805" rowspan="1" colspan="1">Yes</td>
+                                 </tr>
+                                 <tr class="row">
+                                    <td class="entry" valign="top" width="50%" headers="d54e802" rowspan="1" colspan="1">QNX</td>
+                                    <td class="entry" valign="top" width="50%" headers="d54e805" rowspan="1" colspan="1">Yes</td>
+                                 </tr>
+                                 <tr class="row">
+                                    <td class="entry" valign="top" width="50%" headers="d54e802" rowspan="1" colspan="1">MacOSX</td>
+                                    <td class="entry" valign="top" width="50%" headers="d54e805" rowspan="1" colspan="1">No</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic concept nested1" id="gpu-support"><a name="gpu-support" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#gpu-support" name="gpu-support" shape="rect">4.2.&nbsp;GPU Support</a></h3>
+                     <div class="body conbody">
+                        <p class="p">The compute-sanitizer tools are supported on all CUDA capable GPUs with SM versions 5.0 and above.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="topic concept nested0" id="notices-header"><a name="notices-header" shape="rect">
+                     <!-- --></a><h2 class="title topictitle1"><a href="#notices-header" name="notices-header" shape="rect">Notices</a></h2>
+                  <div class="topic reference nested1" id="notice"><a name="notice" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#notice" name="notice" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Notice</h3>
+                           <p class="p">ALL NVIDIA DESIGN SPECIFICATIONS, REFERENCE BOARDS, FILES, DRAWINGS, DIAGNOSTICS, LISTS, AND OTHER DOCUMENTS (TOGETHER AND
+                              SEPARATELY, "MATERIALS") ARE BEING PROVIDED "AS IS." NVIDIA MAKES NO WARRANTIES, EXPRESSED, IMPLIED, STATUTORY, OR OTHERWISE
+                              WITH RESPECT TO THE MATERIALS, AND EXPRESSLY DISCLAIMS ALL IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTABILITY, AND FITNESS
+                              FOR A PARTICULAR PURPOSE. 
+                           </p>
+                           <p class="p">Information furnished is believed to be accurate and reliable. However, NVIDIA Corporation assumes no responsibility for the
+                              consequences of use of such information or for any infringement of patents or other rights of third parties that may result
+                              from its use. No license is granted by implication of otherwise under any patent rights of NVIDIA Corporation. Specifications
+                              mentioned in this publication are subject to change without notice. This publication supersedes and replaces all other information
+                              previously supplied. NVIDIA Corporation products are not authorized as critical components in life support devices or systems
+                              without express written approval of NVIDIA Corporation.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="trademarks"><a name="trademarks" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#trademarks" name="trademarks" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Trademarks</h3>
+                           <p class="p">NVIDIA and the NVIDIA logo are trademarks or registered trademarks of NVIDIA Corporation
+                              in the U.S. and other countries.  Other company and product names may be trademarks of
+                              the respective companies with which they are associated.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="topic reference nested1" id="copyright-past-to-present"><a name="copyright-past-to-present" shape="rect">
+                        <!-- --></a><h3 class="title topictitle2"><a href="#copyright-past-to-present" name="copyright-past-to-present" shape="rect"></a></h3>
+                     <div class="body refbody">
+                        <div class="section">
+                           <h3 class="title sectiontitle">Copyright</h3>
+                           <p class="p">© <span class="ph">2019</span>-<span class="ph">2022</span> NVIDIA
+                              Corporation and affiliates. All rights reserved.
+                           </p>
+                           <p class="p">This product includes software developed by the Syncro Soft SRL (http://www.sync.ro/).</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>
